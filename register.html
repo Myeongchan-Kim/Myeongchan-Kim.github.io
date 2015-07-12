@@ -1,0 +1,61 @@
+<!--register.html-->
+<!doctype html>
+<html>
+<head>
+	<title>가입양식 폼</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<header>
+	<h1>회원 가입</h1>
+	</header>
+	<main>
+	<form 	id="form1" name"form1" method="POST" target="_self" 
+			action="http://taegon.kim/form.php" accept-charset="UTF-8">
+		<!--이름, 비밀번호, 비밀번호 재확인, 이메일, 전화번호, 생년월일, 성별, 주소-->
+		<div 	id="nameDiv"	name="name_div">
+			<label for="name">이름</label>
+			<input name="name"	id="name"	type="text" autofocus	required	placeholder="ex)김명찬">
+		</div><!-- name_div-->
+		<div 	id="pwDiv"	name="pw_div">
+			<label for="pw">비밀번호</label>
+			<input name="pw" 	id="pw"		type="password"	autocomplete="off"	required>
+			<br>
+			<label for="pw_re">재확인</label>
+			<input name="pw_re"	id="pw_re"	type="password"	autocomplete="off"	required>
+		</div><!-- pw_div-->
+		<div 	id="emailDiv"	name="emailDiv">
+			<label for="email">이메일</label>
+			<input name="email"	id="email" type="email" placeholder="gildong.hong@yyy.com">
+		</div>
+		<div id="telDiv"	name="telDiv">	
+			<label for="telNum">연락처</label>
+			<input name="telNum" type="tel" placeholder="010-0000-0000">
+		</div>
+		<div id="birthDiv"	name="birthDiv">
+			<label for="birthDay">생년월일</label>
+			<input name="birthDay" type="date" >
+		</div>
+		<div id="gdDiv" name="gdDiv">
+			<label>성별</label>
+			<label for="gender_m">남</label>
+			<input name="gender" id="gender_m"	type="radio" value="male">
+			<label for="gender_f">여</label>
+			<input name="gender" id="gender_f"	type="radio" value="female">
+		</div>
+		<div id="addDiv"	name="addDiv">
+			<label for="address">주소</label>
+			<input name="address"	id="address"	type="text"	>
+			<input name="findaddress" 	type="button"	value="찾기">
+			<label for="detail_add">상세주소</label>
+			<input name="detail_add"	id="detail_add"	type="text">
+		</div>
+		<input type="submit" value="제출">
+	</form>
+	</main>
+	<footer>
+		<p>&copy; 2015 Paul MC Kim &commat; NHN NEXT</p>
+		<p>2015 2학기 Web UI basic 2주차 과제</p>
+	</footer>
+</body>
+</html>
