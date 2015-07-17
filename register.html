@@ -2,11 +2,11 @@
 <!doctype html>
 <html>
 <head>
-	<title>가입양식 폼</title>
+	<title>회원가입</title>
 	<meta charset="UTF-8">
 	<style>
 	fieldset{
-		border : 0 solid green;
+		border : 0 ;
 	}
 	legend {
 		/* 접는 방법*/
@@ -29,7 +29,7 @@
 	<form 	id="form1" name"form1" method="POST" target="_self" 
 			action="http://taegon.kim/form.php" accept-charset="UTF-8">
 		<!--이름, 비밀번호, 비밀번호 재확인, 이메일, 전화번호, 생년월일, 성별, 주소-->
-		<fieldset>
+		<fieldset id="register_form">
 		<legend>회원가입 양식</legend>
 		<div 	id="nameDiv"	name="name_div">
 			<label for="name">이름</label>
@@ -71,18 +71,10 @@
 		</fieldset>
 		<button type="submit">완료</button>
 	</form>
-	<p id="first">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices ex nec dui cursus, sed lacinia odio interdum. 
-	</p>
-	<p class="even">In fermentum, diam quis semper aliquam, nunc diam dignissim neque, eget pulvinar libero lorem sit amet mauris. Cras quis pharetra nisl. Cras luctus est metus, nec sagittis eros iaculis quis. 
-	</p>
-	<p class="even">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed purus nibh, feugiat sed sem sed, semper mollis magna. 
-	</p>
-	<p id="last">Vivamus in tempor lorem. Aenean sollicitudin ex nunc, eu viverra massa tempus vel. Maecenas molestie magna iaculis magna pellentesque maximus. Quisque vehicula risus ac felis sagittis, eget ornare justo commodo.
-	</p>
 	</main>
 	<footer>
 		<p>&copy; 2015 Paul MC Kim &commat; NHN NEXT</p>
-		<p>2015 2학기 Web UI basic 2주차 과제</p>
+		<p>2015 2학기 Web UI basic 2~3주차 과제</p>
 	</footer>
 </body>
 </html>
