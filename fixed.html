@@ -1,0 +1,151 @@
+<!--fixed.html-->
+<!doctype html>
+<html>
+<head>
+	<title>fixed headline</title>
+	<meta charset="UTF-8">
+	<style>
+	body{
+	}
+	div{
+	}
+	#global-header{
+		position:fixed;
+		top:0;
+		left:0;
+		background: blue;
+		height:42px;
+		width:100%;
+	}
+	#first_p{
+	}
+	#second_p{
+	}
+	#third_p{
+	}
+	#second_div{
+		position:relative;
+		width:100%;
+	}
+	#pop_up{
+		position: fixed;
+		left:0;
+		top:0;
+		width:100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5);
+	}
+	#pop_up .inner{
+		position: absolute;
+		top:50%;
+		left:50%;
+	}
+	#pop_up p{
+		position: absolute;
+		background: rgb(230, 220, 204);
+		width:400px;
+		height:150px;
+		top:-75px;
+		left:-200px;
+	}
+	#pop_up #sello{
+		position: absolute;
+		top:-50px;
+		width:200px;
+		height:100px;
+		border: 5px dashed black;
+	}
+	main {
+		margin-top:50px
+	}
+	h1 { 
+		background: gray;
+	}
+	#first{
+		color : blue;
+	}
+
+	#last{
+		color : green;
+	}
+
+	.even{
+		color : brown;
+	}
+	ul{
+		list-style: none;
+	}
+	li{
+		float: left;
+	}
+	#left_side{
+		height: 100%;
+		float: left;
+		background: pink;
+	}
+	#content{
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+<header id="global-header">
+</header>
+<main>
+	<section id="left_side">
+		<p>Left sidebar</p>
+	</section>
+	<secion id="content">
+	<div id="lipsum">
+	<p id="first_p">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id mi ante. Etiam non hendrerit lorem. Quisque consectetur dolor egestas imperdiet imperdiet. Etiam tempor orci risus, ac mattis justo venenatis elementum. Curabitur molestie et lorem id laoreet. Etiam blandit consectetur ex id malesuada. Nam tincidunt ipsum eget magna pellentesque feugiat. Aliquam fringilla sem sed nisl ultrices, at tristique elit euismod.
+	</p>
+	<div id="second_div">
+	<p id="second_p">
+	Aenean fermentum sem et erat ultrices pharetra. Pellentesque et ante maximus, porttitor erat ut, laoreet urna. Cras sit amet facilisis enim. Ut pretium tortor ligula. Aliquam venenatis scelerisque sagittis. Sed ut orci dui. Quisque eget interdum ante. Nullam iaculis pharetra ipsum, a congue ex elementum sed. Vivamus dictum commodo nulla semper pretium. Ut lobortis vestibulum risus sit amet consequat. Mauris accumsan, sem a finibus blandit, neque nulla rhoncus nulla, id feugiat arcu ex sed orci. Sed quis felis magna. Phasellus efficitur tincidunt quam id feugiat. Proin et porttitor lacus, non vestibulum ligula.
+	</p>
+	</div>
+	<p id="third_p">
+	Sed diam nisl, tristique sed lectus eget, ornare auctor lorem. Phasellus eleifend tempor vulputate. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur enim quam, blandit id ultrices a, gravida eu ipsum. Sed ante massa, dapibus ut lectus non, auctor malesuada lorem. Donec quis odio augue. Praesent pretium purus sed enim finibus, vitae hendrerit purus pharetra. Aliquam ut pharetra massa. Integer lobortis quam non ex iaculis iaculis. Vestibulum id urna orci. Aliquam aliquam laoreet pharetra. Duis pretium hendrerit ullamcorper. Integer dictum condimentum dui nec iaculis. Nulla condimentum accumsan libero, eget ultricies tortor sodales vitae.
+	</p>
+	<p>
+	Pellentesque feugiat, eros ac ullamcorper ultricies, eros tellus venenatis urna, vel pulvinar tellus turpis at dui. Sed accumsan dui auctor elementum hendrerit. Maecenas accumsan ipsum id nunc tincidunt gravida. Maecenas pulvinar interdum odio, eget volutpat orci pretium id. Pellentesque varius eget erat sed egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec auctor, ante vel tincidunt accumsan, ligula nibh mattis lorem, ut mollis sapien tortor vitae justo. Morbi egestas turpis sit amet eleifend eleifend. Aenean non venenatis quam, vitae gravida quam. Phasellus ac elit eget turpis vestibulum imperdiet. Quisque rhoncus, massa non vehicula cursus, sem ante congue elit, eu imperdiet sem nulla porta massa.
+	</p>
+	<p>
+	Aenean erat felis, vehicula sit amet tempor semper, finibus a nulla. Proin eget enim sit amet ex interdum placerat. Aliquam ultrices eros vitae velit consequat tristique. In maximus, ipsum id luctus venenatis, urna orci vestibulum enim, in imperdiet odio magna eget libero. Aliquam egestas dictum nisi sit amet tincidunt. Etiam neque libero, pharetra nec diam et, malesuada rutrum lacus. Sed fermentum arcu eu velit dignissim, id aliquet ex egestas. In mattis ipsum non purus eleifend tincidunt.
+	</p>
+	<p>
+	Etiam congue est at elit commodo, id cursus diam ultrices. Morbi eget faucibus eros. Sed ut velit quis ex posuere luctus. Curabitur volutpat sapien eu tortor pellentesque pharetra. Etiam accumsan semper erat eu scelerisque. Fusce feugiat volutpat ante at congue. Fusce faucibus mauris eleifend massa consectetur placerat. Vivamus ipsum dui, semper id venenatis a, rutrum eu tortor. Fusce sapien quam, sollicitudin sed condimentum non, porta quis ante. Aliquam elit justo, aliquet ut felis ac, fermentum pellentesque massa. Duis dictum dui eget cursus vestibulum.
+	</p>
+	<p>
+	Vivamus ac convallis massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas porttitor dapibus turpis, ac pretium felis elementum in. Fusce odio purus, tempor vitae posuere quis, cursus sed purus. Sed ut lectus mauris. In rhoncus ornare libero, ut viverra enim semper quis. Donec rutrum erat et justo luctus, ac sagittis enim ornare. Suspendisse tempus fermentum commodo.
+	</p>
+	<p>
+	Sed venenatis sodales lacus, eu condimentum risus pellentesque vehicula. Fusce in diam vitae ex accumsan faucibus sit amet quis nunc. Sed laoreet vehicula fringilla. Vivamus vitae lacinia dui, et tincidunt mi. Etiam lobortis nunc id convallis imperdiet. Duis placerat sed magna quis vestibulum. Maecenas tempor sagittis cursus. Quisque tincidunt lorem odio, non commodo justo hendrerit a. Nullam eget velit vitae urna egestas rutrum. Donec quis mi vel quam laoreet euismod vel quis augue. Sed in lacus nec massa dictum finibus. Phasellus tincidunt eleifend leo interdum faucibus.
+	</p>
+	<p>
+	Proin consequat magna et posuere elementum. Donec non vulputate ante, vel feugiat lorem. Etiam laoreet commodo scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis imperdiet justo nec volutpat iaculis. Nulla egestas ultricies magna, sit amet mollis justo sagittis id. In hac habitasse platea dictumst. Aliquam pharetra congue nisi, quis iaculis ipsum. Sed non nibh iaculis, convallis neque at, tempus odio.
+	</p>
+	<p>
+	Proin vitae lorem et quam feugiat tempus at sit amet ante. Sed porttitor felis ipsum, vel elementum lorem finibus nec. Donec quis facilisis mauris, non efficitur erat. Cras nec nibh id urna egestas pretium vitae ac mauris. Mauris luctus enim at nibh fermentum posuere. Suspendisse vitae volutpat dui. Suspendisse nibh justo, iaculis sed tellus pellentesque, venenatis sodales nisi. Quisque egestas magna a justo pulvinar, quis lacinia augue auctor. Vestibulum id hendrerit nulla. Praesent id metus condimentum, tincidunt sapien quis, vestibulum lacus. Maecenas pretium sit amet sapien in consectetur. Nulla facilisi. Aliquam eget tempus ante. Suspendisse potenti.
+	</p>
+	</div>
+	<ul>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+		<li><img src="https://placekitten.com/g/200/300" /></li>
+	</ul>
+
+	<p id="last" style="clear:left;">Vivamus in tempor lorem. Aenean sollicitudin ex nunc, eu viverra massa tempus vel. Maecenas molestie magna iaculis magna pellentesque maximus. Quisque vehicula risus ac felis sagittis, eget ornare justo commodo.
+	</p>
+	</secion>
+</main>
+</body>
+</html>
