@@ -1,0 +1,299 @@
+<!--HW0720.html-->
+<!doctype html>
+<html>
+<head>
+	<title>4주차 과제</title>
+	<meta charset="utf-8">
+	<style>
+		/* latin-ext */
+	@font-face {
+	  font-family: 'Abril Fatface';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDtiatsHTxQkGvnPUXHFXIVY.woff2) format('woff2');
+	  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+	  font-family: 'Abril Fatface';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDgYWpCd0FFfjqwFBDnEN0bM.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+	}
+
+	body{
+		margin : 0px;
+	}
+	header{
+		position: fixed;
+		width:100%;
+		top:0px;
+		background: #BBBBEE;
+		height:3em;
+	}
+	header #welcome{
+		word-spacing : 5px;
+		font-size: 1.0em;
+		padding-left: 10px;
+		line-height: 1.1em;
+		letter-spacing: 2px;
+	}
+	header #welcome span{
+		letter-spacing: 0px;
+		vertical-align: text-top;
+		font-size :0.8em;
+	}
+	header #welcome #my_num{
+	}
+	header #welcome #my_name{
+		text-transform: uppercase;
+	}
+	header #welcome #korean_name{
+		text-decoration: line-through;
+	}
+
+	header #menu_list_box{
+		background: #112211;
+		height: 19px;
+	}
+	header nav #menu_list li{
+		margin: 0px 0px 1px -1px;
+		width : 140px;
+		height: 19px;
+		float:left;
+		list-style: none;
+		text-align: center;
+		border-left:1px solid #AAAAAA;
+		border-right: 1px solid #AAAAAA;
+		overflow:hidden;
+   		text-overflow:ellipsis;
+	}
+
+	header #menu #menu_list li > a{			
+		text-decoration: none;
+		font-weight:bold;
+		font-size:0.8em;
+	}
+	header #menu #menu_list li > a:visited	{	color:#AABBBB;	}
+	header #menu #menu_list li > a:focus	{	color:blue;	}
+
+	#menu #menu_list li:hover{
+		text-shadow:1px 1px #778; 
+		background: #CCC;
+	}
+
+	main {
+		clear:both;
+	}
+	main a{
+	}
+	main #empty_box{
+		height:70px;
+	}
+	main article{
+		margin-left:5px;
+	}
+
+	main article h4{
+		background: #AAA;
+		width:50%;
+		margin: 0 auto;
+		margin-top: 20px;
+		text-align: center;
+		font-weight: bold;
+		border-bottom: 3px solid black;
+	}
+	
+	main article .position_box{
+		position: relative;
+		top : -70px;
+	}
+	main .sub_article div.solution{
+		padding : 5px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	main .css_source{
+		font-family : 돋움, dotum, Monaco;
+		font-size : 9pt;
+		background: #AABBAA;
+	}
+	main .css_source p{
+		white-space:pre;
+		overflow: hidden;
+		text-overflow:ellipsis;
+	}
+
+	main .css_source .point{
+		font-weight:bold;
+		color:#4433BB;
+	}
+	main .web-font{
+	    font-family: Abril Fatface;
+	    font-size: 10pt;
+	}	
+
+	main #priority_score .sub_article #first_solution p span{
+		font-style: italic;
+	}
+	main #priority_score #first_solution p > span:hover{
+		color: #1100AA;
+	}
+
+	main #font_style p{
+		padding-left: 15px;
+		text-indent: -5px;
+	}
+
+	</style>
+</head>
+<body>
+<header id="header">
+	<h1 id="welcome">Welcom to HomeWork 0720  : <span id="my_num">141012</span><span id="my_name"> Paul MC Kim </span><span id="korean_name">김명찬</span></h1>
+	<div id="menu_list_box">
+		<nav id="menu">
+		<ol id="menu_list">
+			<li id="first"><a href="#first_position">우선순위 점수</a></li>
+			<li id="second"><a href="#second_position">글꼴 CSS 프로퍼티</a></li>
+			<li id="third"><a href="#third_position">learn out</a></li>
+			<li id="fourth"><a href="#fourth_position">the 30 css selector</a></li>
+		</ol>
+		</nav>
+	</div>
+</header>
+<main>
+	<div id="empty_box"></div>
+	<article id="priority_score">
+	<div class="position_box" id="first_position"></div>
+	<div class="sub_article">
+		<h3 class="header_three">1. 우선순위 점수가 0,2,1,3인 선택자를 3개 작성하라.</h3>
+		<p>이 페이지에 적용한 CSS중 세개 입니다. </p>
+		<div id="first_solution" class="solution css_source" ><p>header #menu #menu_list li > a:focus{<span>color:blue;</span>}
+main #priority_score .sub_article #first_solution p span {<span>font-style: italic;</span>}
+main #priority_score #first_solution p span:hover{<span>color: #1100AA;</span>}</p></div></div>
+	</article>
+	<article id="font_style">
+	<div class="position_box" id="second_position"></div>
+		<h3 class="header_three">2. CSS가 포함된 웹 페이지를 작성하고 강의 자료에서 기술한 텍스트 글꼴 CSS 프로퍼티를 최소 한 번씩 사용하라.(GitHub에 등록 후 주소만 공유)</h3>
+		<div class="sub_article">
+		<h4>web-font</h4>
+		<p>웹 폰트는 사용자에게 없어도, 웹에서 글꼴을 불러와서 사용한다. 한글 글꼴은 용량이 커서 적합하지 않습니다. </p>
+		<p>유명한 폰트라길래 한번 써봤습니다. abrilFatface입니다.  출처는.. <a href="http://www.creativebloq.com/typography/free-web-fonts-1131610">여기</a>에요.</p>
+		<div id="second_solution" class="solution css_source"><p class="web-font">  /* latin */
+@font-face {
+	font-family: 'Abril Fatface';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDgYWpCd0FFfjqwFBDnEN0bM.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}</p><p class="web-font">main #web-font{
+	font-family:'맑은고딕' 'NanumGothic', 'MalgunGothic';
+	font-size: 9pt;
+}</p></div><!--sub_article-->
+		<div class="sub_article">
+		<h4>font-family, font-size</h4>
+		<p>적용할 글꼴을 여러 개 적는다. 앞쪽에 쓰인 글꼴이 사용자가 지원하지 않는 글꼴일 가능성을 염두에 두고, 제일 마지막에는 기본글꼴중에 하나를 적는 것이 좋겠죠? 이 페이지의 소스코드 부분에 적용해 보았습니다. </p>
+		<div id="second_solution" class="solution css_source"><p id="font-family">
+font-family : 돋움, dotum, Monaco;
+font-size : 9pt;</p></div>
+		</div><!--sub_article-->
+		<div class="sub_article">
+		<h4>color, font-style, text-align, font-weight</h4>
+		<p>이 페이지의 네비게이션 바, 1번 문제 소스의 스타일 부분에 사용해 보았습니다. </p>
+		<div id="second_solution" class="solution css_source"><p>
+header nav #menu_list li{
+	margin: 0px 0px 1px -1px;
+	width : 140px;
+	float:left;
+	list-style: none;
+	<span class="point">text-align: center;</span>
+	border-left:1px solid #AAAAAA;
+	border-right: 1px solid #AAAAAA;
+}
+
+header #menu #menu_list li > a{			
+	text-decoration: none;
+	<span class="point">font-weight:bold;</span>
+	font-size:0.8em;
+}
+	header #menu #menu_list li > a:visited	{	<span class="point">color:#AABBBB;</span>	}
+	header #menu #menu_list li > a:focus	{	<span class="point">color:blue;</span>	}
+
+main #priority_score .sub_article #first_solution p span{
+	<span class="point">font-style: italic;</span>
+}</p>
+</div><!--sub_article-->		
+		<div class="sub_article">
+		<h4>vertical-align, text-decoration, text-transform, letter-spacing, line-height, word-spacing </h4>
+		<p>이 페이지 상단의 헤더 제목에 사용하였습니다. </p>
+		<div id="third_solution" class="solution css_source">
+		<p id="font-family">
+header #welcome{
+	<span class="point">word-spacing : 5px;</span>
+	<span class="point">letter-spacing: 0px;</span>
+	font-size: 1.0em;
+	padding-left: 10px;
+	<span class="point">line-height: 1.1em;</span>
+}
+header #welcome span{
+
+	<span class="point">letter-spacing: 0px;</span>
+	<span class="point">vertical-align: text-top;</span>
+	font-size :0.8em;
+}	
+
+header #welcome #my_name{
+	<span class="point">text-transform: uppercase;</span>
+}
+header #welcome #korean_name{
+	<span class="point">text-decoration: line-through;</span>
+}
+		</p>
+		</div>
+		</div><!--sub_article-->		
+		<div class="sub_article">
+		<h4> text-indent, white-space􏰀, text-overflow</h4>
+		<p>이 페이지의 설명부분에 text-indent를, 소스 부분에 white-spce:pre , text-overflow:ellipsis를 사용했습니다. 메뉴 네비게이션에 hover 슈도클래스에 text-shadow를 사용했습니다.  </p>
+		<div id="fourth_solution" class="solution css_source">
+		<p>
+main .css_source p{
+	<span class="point">white-space:pre;</span>
+	overflow: hidden;
+	<span class="point">text-overflow:ellipsis;</span>
+}
+
+main #font_style p{
+	padding-left: 15px;
+	<span class="point">text-indent: -5px;</span>
+}
+
+#menu #menu_list li:hover{
+	<span class="point">text-shadow:1px 1px #778;</span> 
+	background: #CCC;
+}</p>
+		</div>
+		</div><!--sub_article-->
+	</article>
+	<article id="learn_out">
+	<div class="position_box" id="third_position"></div>
+		<h3 class="header_three">3. 
+		<a href="http://ko.learnlayout.com/"> learnlayout.com </a> 사이트 마지막 페이지까지 학습할 것.
+		</h3>
+		<h4>스크린샷</h4>
+		<img src="./finish.PNG" />
+	</article>
+	<article id="30_selector">
+	<div class="position_box" id="fourth_position"></div>
+		<h3 class="header_three">4.<a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">the 30 css selector you must memorize</a> 읽어볼 것.
+</h3>
+		<p>헐...... 다읽고 났더니..
+		main #priority_score .sub_article #first_solution p span{}
+		이런짓 하지 말라고 나와있네요..나중에 수정해야겠다 ㅠㅠ 숙제때문에 일부러 길게 쓴거입니다 ㅠㅠ
+	</p>
+	</article>
+</main>
+<footer>
+</footer>
+</body>
+</html>

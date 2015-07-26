@@ -10,6 +10,8 @@
 		property-name : property-value(s);
 	}
 	-->
+	*{;
+	}
 	h1 { 
 		background: red;
 	}
@@ -30,8 +32,33 @@
 	ul{
 		list-style: none;
 	}
-	li{
-		float: left;
+	#test p{
+		width:200px; 
+		overflow:hidden; 
+		white-space:nowrap; 
+		text-overflow:ellipsis;
+	}
+	#test ul{
+		padding:0;
+	}
+	#test li{
+		display: inline;	
+		background: rgb(0,136,221);
+	}
+	#last{
+		clear:left;
+	}
+	#par{
+		background: pink;
+		width:300px;
+		height:200px;;
+		margin:20px;
+	}
+	#child{
+		background: orange;
+		width:100px;
+		height: 80px;
+		margin: 30px;
 	}
 	</style>
 </head>
@@ -40,9 +67,29 @@
 	<h1>WebUI basic</h1>
 </header>
 <main>
+<div id="par">
+<div id="child">
+<p>child</p>
+</div>
+</div>
+
 <section>
-	Left sidebar
+	<select style="opacity:0.1">
+		<option>op1</option>
+		<option>op2</option>
+		<option>op3</option>
+	</select>
 </section>
+<div id="test" >
+	<h3 style="font-family:sans-serif;">Welcome to the real-time HTML editor!</h3>
+	<p style="font-style:italic;">Type HTML in the textarea above, and it will magically appear in the frame below.</p>
+	<ul>
+		<li>Block 1</li>
+		<li>Block 2</li>
+		<li>Block 3</li>
+		<li id="last"> </li>
+	</ul>
+</div>
 <section>
 	<p id="first">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices ex nec dui cursus, sed lacinia odio interdum. 
 	</p>
