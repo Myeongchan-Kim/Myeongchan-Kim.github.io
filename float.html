@@ -1,0 +1,65 @@
+<!--float.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+	#wrap{
+		background: #DDDDDD;
+		width:960px;
+	}
+	#header{
+		height: 80px;;
+		background: gray;
+	}
+	.float_div{
+		width:33%;
+		float:left;
+		height: 300px;
+		margin-left:0.3%;
+	}
+
+	#blue{
+		background: blue;
+	}
+	#green{
+		background: green;
+	}
+	#yellow{
+		background: yellow;
+	}
+
+	.row{
+		width:100%;
+	}
+
+	.row::after{
+		content: '';
+		display:block;
+		clear:both;
+	}
+	#footer{
+		background: orange;
+		height: 80px;
+	}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">#header</div>
+	<div class="row">
+	<div class="row_div3">
+		<div id="blue" class="float_div">div</div>
+	</div>
+	<div class="row_div3">
+		<div id="green" class="float_div">div</div>
+	</div>
+	<div class="row_div3">
+		<div id="yellow" class="float_div">div</div>
+	</div>
+	</div>
+	<div id="footer">#footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!--slide.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	#container{
+		background: #BBBBBB;
+		overflow: hidden;
+		width:300px;
+		height:200px;
+	}
+	ul {
+		list-style: none;
+		padding:0;
+		margin: 0;
+	}
+	#first{
+		background: blue;
+	}
+	#second{
+		background: green;
+	}
+	#third{
+		background: yellow;
+	}
+	#container ul{
+		width:300%;
+	}
+	#nav{
+		position:absolute;
+		top:180px;
+		left:20px;
+		width:200px;
+		height: 20px;
+		z-index: 10;
+	}
+
+	#nav .button{
+		display: block;
+		width:20px;
+		height: 20px;
+		margin-left: 5px;
+		background: gray;
+		border-radius: 10px;
+		float :left;
+	}
+	#nav::after{
+
+	}
+
+	#container ul .pic{
+		display: block;
+		position: relative;
+		float:left;
+		margin:0;
+		height:200px;
+		width:300px;
+	}
+	</style>
+</head>
+<body>
+<div id="container" >
+	<div id="nav">
+		<a class="button" href="#first"></a>
+		<a class="button" href="#second"></a>
+		<a class="button" href="#third"></a>
+	</div>
+	<ul>
+	<li><a id="first" class="pic" ><span><img src="https://placekitten.com/g/400/200"></span></a></li>
+	<li><a id="second" class="pic" ><span><img src="https://placekitten.com/350/200"></span></a></li>
+	<li><a id="third" class="pic" ><span><img src="https://placekitten.com/370/200"></span></a></li>
+	</ul>
+</div>
+</body>
+</html>
