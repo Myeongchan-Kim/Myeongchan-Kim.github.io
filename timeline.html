@@ -4,94 +4,565 @@
 <head>
 	<title>timeline</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+	<!-- icon font -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://i.icomoon.io/public/temp/79645f19e6/UntitledProject/style.css">-->
+	<style>
+	* {
+		font-family: helvetica, arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		box-sizing:border-box;
+	}
+
+	body{
+		background: #e9eaed;
+	}
+
+	a{
+		text-decoration: none;
+	}
+	
+	#global-header{
+		position:fixed;
+		top:0;
+		left:0;
+		background: rgb(59, 89, 152);
+		height:42px;
+		width:100%;
+		box-shadow: 1px 1px 2px gray ;
+		border-bottom: 1px solid black;
+		z-index: 10;
+	}
+
+	#wrap_title {
+		position: absolute;
+		top: 0;
+		height:42px;	
+		width:976px;
+		margin-left:50px;
+	}
+
+	header .title_box{
+		height: 28px;
+		margin:7px 7px 7px 0;
+	}
+
+	#fa_icon_box{
+		position : relative;
+		width:28px;
+		margin-left: 10px;
+		float :left;
+	}
+
+	#main_title_box{
+		position: relative;
+		top :0px;
+		float: left;
+		padding-top:1px;
+	}
+
+	#search{
+		background: white;
+		height: 24px;
+		width: 400px;
+		border-radius: 3px;
+		float: left;
+	}
+
+	#main_title_box #search_input{
+		display: block;
+		position: relative;
+		top:5px;
+		height: 15px;
+		width: 375px;
+		
+		float:left;
+		
+		margin-right: 5px;
+		padding-left: 5px;
+		border:none;
+		border-right: 1px solid #DDD; 
+		
+		font-size:13px;
+		vertical-align: center;
+	}
+
+	#global-header #facebook-icon{
+	    font-size: 26px;
+	    text-align: center;
+	    vertical-align: center;
+	    color:white;
+	}
+
+	#global-header #serch_icon{
+		font-size: 13px;
+		color:#BBB;
+		margin-top: 5px;
+	}
+
+	#title_menu_box{
+		float :right;
+		width:287px;
+	}
+	#title_menu_list{
+		position: relative;
+		top: 0; left:0;
+		margin: 0;
+		height: 28px;
+		padding: 0;
+		font-size: 12px;
+		list-style: none;
+	}
+
+	#title_menu_list .titlebar_icon {
+		float: left;
+	}
+
+	#title_menu_list .titlebar_icon a.bg-dark{
+		position:relative;
+		display:block;
+		height:28px;
+		padding-top: 0;
+		border-radius: 3px;
+
+		color: #FFF;
+		text-align: center;
+		vertical-align: top;
+		float:left;
+	}
+
+	#title_menu_list #home_button a{
+		padding-left:5px;
+	}
+
+	#title_menu_list .titlebar_icon a.icon-dark{
+		font-size:18px;
+	}
+
+	#title_menu_list .titlebar_icon a:hover{
+		background: rgb(49, 79, 142)
+	}
+
+	#title_menu_list #profile_box a{
+		padding-right: 5px;
+	}
+
+	#title_menu_list #profile_box::after {
+		position:relative;
+		top:4px;
+		content: "";
+		font-size: 17px;
+		border-right: 1px solid rgba(0,0,0,0.1);
+	}
+
+	#title_menu_list span{
+		position: relative;
+		display: inline-block;
+		float:left;
+		height: 17px;
+		margin: 5px;
+		padding-top: 1px;
+		padding-left:5px;
+		padding-right:5px;
+		vertical-align: middle;
+		-webkit-font-smoothing: antialiased;
+		text-shadow: 0 -1px rgba(0, 0, 0, .5);
+		font-weight: bold;;
+	}
+
+	#title_menu_list #profile_name{
+		
+	}
+	
+	#title_menu_list #profile_img{
+		position: relative;
+		margin :3px;
+		display: inline-block;
+		float:left;
+		border-radius: 3px;
+		border:1px solid rgb(39, 59, 122);
+		width:20px;
+		height: 20px;
+	}
+
+	#title_menu_list #msg_frnd_noti {
+		margin-left: 20px;
+		height:28px;
+		float:left;
+		vertical-align: top;
+	}
+
+	#title_menu_list #msg_frnd_noti::after {
+		position:relative;
+		top:4px;
+		content: "";
+		font-size: 17px;
+		border-right: 1px solid rgba(0,0,0,0.1);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	#title_menu_list #msg_frnd_noti a {
+		position: relative;
+		top:-3px;
+		font-size: 22px;
+		color: rgb(43, 65, 112);
+	}
+
+	#title_menu_list #msg_frnd_noti a:hover {
+		color: rgb(29, 49, 82);
+	}
+
+	#title_menu_list #msg_frnd_noti a:focus {
+		color: rgb(255, 255, 255);
+	}
+
+	#title_menu_list span{
+		padding-left:0;
+		padding-right:0;
+		text-shadow: 0 0.5px rgba(200, 200, 200, .3);
+	}
+	
+	#title_menu_list #lock_button a{
+		position: relative;
+		top:1px;
+		font-size: 14px;
+		color: rgb(43, 65, 112);
+	}
+
+	#title_menu_list #lock_button a:focus {
+		color: rgb(255,255,255);
+	}
+
+	#title_menu_list #see_more_button a{
+		position: relative;
+		top:-2px;
+		left:10px;
+		font-size: 20px;
+		color: rgb(43, 65, 112);
+	}
+	#title_menu_list #see_more_button a:hover {
+		color: rgb(29, 49, 82);
+	}
+
+	main {
+		position:absolute;
+		top:42px;
+		left:0px;
+		margin-left: 50px;
+		width:976px;
+	}
+
+	main .column{
+		float:left;
+		padding-left: 11px;
+	}
+
+	main #left_side{
+		padding-top: 12px;
+		width:172px;
+	}
+	main ul{
+		list-style: none;
+	}
+	
+	main #content{
+		padding-top: 12px;
+		width:506px;
+	}
+
+	main #ad_col{
+		padding-top: 12px;
+		width:287px;
+	}
+
+	main::after{
+		content: "";
+		clear:both;
+	}
+
+	main #content article{
+		background: #FFFFFF;
+		border-top: 1px solid #E5E6E9;
+		border-left: 1px solid #DFE0E4;
+		border-right: 1px solid #DFE0E4;
+		border-bottom: 1px solid #D0D1D5;
+		border-radius: 3px;
+		margin-bottom: 10px;
+		min-height: 140px;
+	}
+	main #content #first_art{
+		height:149px;
+		margin-bottom: 10px;
+	}
+
+	main #ad_col article{
+		background: #FFFFFF;
+		border-top: 1px solid #E5E6E9;
+		border-left: 1px solid #DFE0E4;
+		border-right: 1px solid #DFE0E4;
+		border-bottom: 1px solid #D0D1D5;
+		border-radius: 3px;
+		padding:12px;
+	}
+
+	main #ad_col #my_page_art{
+		min-height: 500px;
+	}
+
+	#left_side .left_submenu{
+		margin-bottom: 10px
+	}
+	#left_side ul{
+		margin: 0;
+		margin-top: 4px;
+		padding: 0;
+	}
+
+	#left_side ul li{
+		position:relative;
+		clear:both;
+		padding-left: 5px;
+		line-height: 24px;
+		border-radius: 3px;
+	}
+
+	#left_side li a{
+		display: block;
+		font-size: 12px;
+		color: #141823;	
+	}
+
+	#left_side li a span{
+		position:relative;
+		top:1px;
+	}
+	#left_side li a img {
+		position: relative;
+		top:4px;
+		display: inline-block;
+		width:18px;
+		height:18px;
+		border: 1px solid rgba(0,0,0,0.1);
+		margin-right: 4px;
+		border-radius: 2px;
+	}
+	#left_side h3{
+		margin:0;
+		padding: 0;
+		color: #9197a3;
+		font-size: 11px;
+	}
+	#left_side span{
+		color :#333333;
+	}
+
+	#left_side span.menuWithNum{
+		max-width:120px;
+		text-overflow:ellipsis;
+		padding: 0;
+		margin-left: -3px;
+	}
+	#left_side span.numWithMenu{
+		display: inline-block;
+		float: right;
+		font-size: 11px;
+		padding-top: 5px;
+		padding-right: 5px;
+		padding-left: 5px;
+		color: #4e5665;
+		line-height:13px;
+	}
+	#left_side ul .bg-dark:hover{
+		background: rgba(100,100,100,0.1)
+	}
+
+	#left_side #newfeed_button #nb_first{
+		display: block;
+		float: left;
+		width:116px;
+	}
+	#left_side #newfeed_button #nb_second{
+		position: relative;
+		width: 22px;
+		float: right;
+		text-align: center;
+		color: #4e5665;
+		font-size: 12px;
+	}
+	#left_side #newfeed_button{
+		height: 24px;
+	}
+	#left_side #newfeed_button::after{
+		content: "";
+		clear:both;
+	}
+
+	#divOfMine {
+		margin-bottom: 8px;
+	}
+	#divOfMine ul li{
+		line-height: 16px;
+		padding-left:5px;
+		margin-bottom: 2px;
+	}
+	
+	#divOfMine li a{
+		display: block;
+		position: relative;
+		top:-3px;
+		font-size: 12px;
+		color: #141823;
+	}
+
+	#divOfMine li a span:hover{
+		text-decoration: underline;
+	}
+
+	#left_side .see_more{
+		display: inline-block;
+		float:right;
+		font-size: 11px;
+		color: #627AAD;
+	}
+	#left_side .see_more:hover{
+		text-decoration: underline;
+	}
+	</style>
 </head>
 <body>
+<form action="" method="GET" >
 <header id="global-header">
-	<form action="" method="GET" >
-	<input type="text" id="search" placeholder="궁금한 친구나 장소를 검색 해 보세요.">
-	<button type="submit" id="search_button">검색</button>
-	</form>
+<div id="wrap_title">
+	<div id="fa_icon_box" class="title_box">
+		<a href=""><i id="facebook-icon"class="fa fa-facebook-official"></i></a>
+	</div>
+	<div id="main_title_box" class="title_box">
+		<div id="search">
+			<input type="text" id="search_input" placeholder="궁금한 친구나 장소를 검색 해 보세요.">
+			<i id="serch_icon" class="fa fa-search"></i>
+		</div>
+	</div>
+		<div id="title_menu_box" class="title_box">
+		<ul id="title_menu_list">
+			<li id="profile_box" class="titlebar_icon">
+				<a href="" class="bg-dark">
+				<img src="./my_pic.jpg" id="profile_img">
+				<span id="profile_name">김명찬</span>
+				</a>
+			</li>
+			<li id="home_button" class="titlebar_icon">
+				<a href=""  class="bg-dark">
+				<span>홈</span>
+				</a>
+			</li>
+			<div id="msg_frnd_noti">
+			<li id="friend_button" class="titlebar_icon">
+				<a href="" class="icon-dark"><span><i id="friends_icon" class="fa fa-users"></i></span></a>
+			</li>
+			<li id="message_button" class="titlebar_icon">
+				<a href="" class="icon-dark"><span><i class="fa fa-comments"></i>
+				</a>
+			</li>
+			<li id="notice_button" class="titlebar_icon">
+				<a href="" class="icon-dark"><span><i class="fa fa-globe"></i></span></a>
+			</li>
+			</div>
+			<li id="lock_button" class="titlebar_icon">
+				<a href="" class="icon-dark"><span><i class="fa fa-lock"></i></span></a>
+			</li>
+			<li id="see_more_button" class="titlebar_icon">
+				<a href="" class="icon-dark"><span><i class="fa fa-caret-down"></i></span></a>
+			</li>
+		</ul>
+		</div>
+	
+</div>
 </header>
-<main>
-	<section id="left_side">
-		<div>
+</form>
+<main id="global_main">
+	<section id="left_side" class="column">
+		<div id="divOfMine" class="left_submenu">
+		<ul>
+			<li><div><a><img src="./my_pic.jpg"><span>김명찬</span></a></div>
+			</li>
+			<li><div><a><img><span>프로필 편집</span></a></div>
+			</li>
+		</ul>
+		</div>
+		<div id="fav_nav" class="left_submenu">
 		<h3>즐겨찾기</h3>
 		<ul>
-			<li>뉴스피드</li>
-			<li>메시지</li>
-			<li>이벤트</li>
+			<li id="newfeed_button" class="bg-dark">
+				<div id="nb_first"><a><img><span>뉴스피드</span></a></div>
+				<div id="nb_second" class="bg-dark"><i class="fa fa-caret-down"></i>
+				</div>
+			</li>
+			<li class="bg-dark">
+				<div><a>
+				<img>
+				<span class="menuWithNum">메시지</span>
+				<span></span>
+				</a></div>
+			</li>
+			<li class="bg-dark">
+				<div><a>
+				<img>
+				<span class="menuWithNum">이벤트</span>
+				<span class="numWithMenu">3</span>
+				</a></div>
+			</li>
 		</ul>
 		</div>
-		<div>
-		<h3>그룹</h3>
+		<div id="group_nav" class="left_submenu">
+		<h3>그룹<span class="see_more"><a>더 보기</a></span></h3>
 		<ul>
-			<li>NEXT사제지간</li>
-			<li>NA우리NEXT</li>
-			<li>HTSAT in NEXT</li>
-			<li>생활코딩</li>
+			<li class="bg-dark">
+			<div><a>
+				<img>
+				<span class="menuWithNum">NEXT사제지간</span>
+				<span class="numWithMenu">20+</span></a></div>
+			</li>
+			<li class="bg-dark">
+			<div><a>
+				<img>
+				<span class="menuWithNum">NA우리NEXT</span>
+				<span class="numWithMenu">5</span>
+			</a></div>
+			</li>
 		</ul>
 		</div>
-		<div>
-		<h3>앱</h3>
+		<div id="app_nav" class="left_submenu">
+		<h3>앱<span class="see_more"><a>더 보기</a></span></h3>
 		<ul>
-			<li>뉴스피드</li>
-			<li>메시지</li>
-			<li>이벤트</li>
+			<li class="bg-dark">
+			<div><a>
+				<img>
+				<span class="menuWithNum">게임</span>
+				<span class="numWithMenu"></span></a></div>
+			</li>
+			<li class="bg-dark"><div><a>
+				<img>
+				<span class="menuWithNum">Agar.io</span>
+				<span class="numWithMenu"></span></a></div>
+			</li>
 		</ul>
 		</div>
 	</section><!--left_side-->
-	<secion id="content">
-	<div id="lipsum">
-	<p id="first_p">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id mi ante. Etiam non hendrerit lorem. Quisque consectetur dolor egestas imperdiet imperdiet. Etiam tempor orci risus, ac mattis justo venenatis elementum. Curabitur molestie et lorem id laoreet. Etiam blandit consectetur ex id malesuada. Nam tincidunt ipsum eget magna pellentesque feugiat. Aliquam fringilla sem sed nisl ultrices, at tristique elit euismod.
-	</p>
-	<div id="second_div">
-	<p id="second_p">
-	Aenean fermentum sem et erat ultrices pharetra. Pellentesque et ante maximus, porttitor erat ut, laoreet urna. Cras sit amet facilisis enim. Ut pretium tortor ligula. Aliquam venenatis scelerisque sagittis. Sed ut orci dui. Quisque eget interdum ante. Nullam iaculis pharetra ipsum, a congue ex elementum sed. Vivamus dictum commodo nulla semper pretium. Ut lobortis vestibulum risus sit amet consequat. Mauris accumsan, sem a finibus blandit, neque nulla rhoncus nulla, id feugiat arcu ex sed orci. Sed quis felis magna. Phasellus efficitur tincidunt quam id feugiat. Proin et porttitor lacus, non vestibulum ligula.
-	</p>
-	</div>
-	<p id="third_p">
-	Sed diam nisl, tristique sed lectus eget, ornare auctor lorem. Phasellus eleifend tempor vulputate. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur enim quam, blandit id ultrices a, gravida eu ipsum. Sed ante massa, dapibus ut lectus non, auctor malesuada lorem. Donec quis odio augue. Praesent pretium purus sed enim finibus, vitae hendrerit purus pharetra. Aliquam ut pharetra massa. Integer lobortis quam non ex iaculis iaculis. Vestibulum id urna orci. Aliquam aliquam laoreet pharetra. Duis pretium hendrerit ullamcorper. Integer dictum condimentum dui nec iaculis. Nulla condimentum accumsan libero, eget ultricies tortor sodales vitae.
-	</p>
-	<p>
-	Pellentesque feugiat, eros ac ullamcorper ultricies, eros tellus venenatis urna, vel pulvinar tellus turpis at dui. Sed accumsan dui auctor elementum hendrerit. Maecenas accumsan ipsum id nunc tincidunt gravida. Maecenas pulvinar interdum odio, eget volutpat orci pretium id. Pellentesque varius eget erat sed egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec auctor, ante vel tincidunt accumsan, ligula nibh mattis lorem, ut mollis sapien tortor vitae justo. Morbi egestas turpis sit amet eleifend eleifend. Aenean non venenatis quam, vitae gravida quam. Phasellus ac elit eget turpis vestibulum imperdiet. Quisque rhoncus, massa non vehicula cursus, sem ante congue elit, eu imperdiet sem nulla porta massa.
-	</p>
-	<p>
-	Aenean erat felis, vehicula sit amet tempor semper, finibus a nulla. Proin eget enim sit amet ex interdum placerat. Aliquam ultrices eros vitae velit consequat tristique. In maximus, ipsum id luctus venenatis, urna orci vestibulum enim, in imperdiet odio magna eget libero. Aliquam egestas dictum nisi sit amet tincidunt. Etiam neque libero, pharetra nec diam et, malesuada rutrum lacus. Sed fermentum arcu eu velit dignissim, id aliquet ex egestas. In mattis ipsum non purus eleifend tincidunt.
-	</p>
-	<p>
-	Etiam congue est at elit commodo, id cursus diam ultrices. Morbi eget faucibus eros. Sed ut velit quis ex posuere luctus. Curabitur volutpat sapien eu tortor pellentesque pharetra. Etiam accumsan semper erat eu scelerisque. Fusce feugiat volutpat ante at congue. Fusce faucibus mauris eleifend massa consectetur placerat. Vivamus ipsum dui, semper id venenatis a, rutrum eu tortor. Fusce sapien quam, sollicitudin sed condimentum non, porta quis ante. Aliquam elit justo, aliquet ut felis ac, fermentum pellentesque massa. Duis dictum dui eget cursus vestibulum.
-	</p>
-	<p>
-	Vivamus ac convallis massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas porttitor dapibus turpis, ac pretium felis elementum in. Fusce odio purus, tempor vitae posuere quis, cursus sed purus. Sed ut lectus mauris. In rhoncus ornare libero, ut viverra enim semper quis. Donec rutrum erat et justo luctus, ac sagittis enim ornare. Suspendisse tempus fermentum commodo.
-	</p>
-	<p>
-	Sed venenatis sodales lacus, eu condimentum risus pellentesque vehicula. Fusce in diam vitae ex accumsan faucibus sit amet quis nunc. Sed laoreet vehicula fringilla. Vivamus vitae lacinia dui, et tincidunt mi. Etiam lobortis nunc id convallis imperdiet. Duis placerat sed magna quis vestibulum. Maecenas tempor sagittis cursus. Quisque tincidunt lorem odio, non commodo justo hendrerit a. Nullam eget velit vitae urna egestas rutrum. Donec quis mi vel quam laoreet euismod vel quis augue. Sed in lacus nec massa dictum finibus. Phasellus tincidunt eleifend leo interdum faucibus.
-	</p>
-	<p>
-	Proin consequat magna et posuere elementum. Donec non vulputate ante, vel feugiat lorem. Etiam laoreet commodo scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis imperdiet justo nec volutpat iaculis. Nulla egestas ultricies magna, sit amet mollis justo sagittis id. In hac habitasse platea dictumst. Aliquam pharetra congue nisi, quis iaculis ipsum. Sed non nibh iaculis, convallis neque at, tempus odio.
-	</p>
-	<p>
-	Proin vitae lorem et quam feugiat tempus at sit amet ante. Sed porttitor felis ipsum, vel elementum lorem finibus nec. Donec quis facilisis mauris, non efficitur erat. Cras nec nibh id urna egestas pretium vitae ac mauris. Mauris luctus enim at nibh fermentum posuere. Suspendisse vitae volutpat dui. Suspendisse nibh justo, iaculis sed tellus pellentesque, venenatis sodales nisi. Quisque egestas magna a justo pulvinar, quis lacinia augue auctor. Vestibulum id hendrerit nulla. Praesent id metus condimentum, tincidunt sapien quis, vestibulum lacus. Maecenas pretium sit amet sapien in consectetur. Nulla facilisi. Aliquam eget tempus ante. Suspendisse potenti.
-	</p>
-	</div>
-	<ul>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-		<li><img src="https://placekitten.com/g/200/300" /></li>
-	</ul>
-
-	<p id="last" style="clear:left;">Vivamus in tempor lorem. Aenean sollicitudin ex nunc, eu viverra massa tempus vel. Maecenas molestie magna iaculis magna pellentesque maximus. Quisque vehicula risus ac felis sagittis, eget ornare justo commodo.
-	</p>
-	</secion>
+	<secion id="content" class="column">
+		<article id="first_art">
+		<p id="first_p">
+		</p>
+		</article>
+		<article id="second_art" class="arts">
+		<p id="second_p">
+		</p>
+		</article>
+	</secion><!--#content-->
+	<section id="ad_col" class="column">
+		<article id="my_page_art" class="ad_arts">
+		</article>
+	</section>
 </main>
 </body>
 </html>
