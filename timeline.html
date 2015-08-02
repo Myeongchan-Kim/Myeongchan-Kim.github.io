@@ -335,15 +335,15 @@
 
 	#left_side li a span{
 		position:relative;
-		top:1px;
 	}
+
 	#left_side li a img {
 		position: relative;
 		top:4px;
 		display: inline-block;
 		width:18px;
 		height:18px;
-		border: 1px solid rgba(0,0,0,0.1);
+		border: 1px solid rgba(200,200,200,0.1);
 		margin-right: 4px;
 		border-radius: 2px;
 	}
@@ -382,6 +382,11 @@
 		float: left;
 		width:116px;
 	}
+
+	#left_side #newfeed_button #nb_first span{
+
+		margin-left: -3px;
+	}
 	#left_side #newfeed_button #nb_second{
 		position: relative;
 		width: 22px;
@@ -391,8 +396,8 @@
 		font-size: 12px;
 	}
 	#left_side #newfeed_button{
-		height: 24px;
 	}
+
 	#left_side #newfeed_button::after{
 		content: "";
 		clear:both;
@@ -447,7 +452,7 @@
 		<ul id="title_menu_list">
 			<li id="profile_box" class="titlebar_icon">
 				<a href="" class="bg-dark">
-				<img src="./my_pic.jpg" id="profile_img">
+				<img src="./src/my_pic.jpg" id="profile_img">
 				<span id="profile_name">김명찬</span>
 				</a>
 			</li>
@@ -484,9 +489,9 @@
 	<section id="left_side" class="column">
 		<div id="divOfMine" class="left_submenu">
 		<ul>
-			<li><div><a><img src="./my_pic.jpg"><span>김명찬</span></a></div>
+			<li><div><a><img src="./src/my_pic.jpg"><span>김명찬</span></a></div>
 			</li>
-			<li><div><a><img><span>프로필 편집</span></a></div>
+			<li><div><a><img src="./src/write_icon.png"><span>프로필 편집</span></a></div>
 			</li>
 		</ul>
 		</div>
@@ -494,22 +499,24 @@
 		<h3>즐겨찾기</h3>
 		<ul>
 			<li id="newfeed_button" class="bg-dark">
-				<div id="nb_first"><a><img><span>뉴스피드</span></a></div>
+				<div id="nb_first"><a class="bg-dark">
+					<img src="./src/nf_icon.png">
+					<span>뉴스피드</span>
+				</a></div>
 				<div id="nb_second" class="bg-dark"><i class="fa fa-caret-down"></i>
 				</div>
 			</li>
 			<li class="bg-dark">
 				<div><a>
-				<img>
-				<span class="menuWithNum">메시지</span>
-				<span></span>
+					<img src="./src/msg_icon.png">
+					<span class="menuWithNum">메시지</span>
 				</a></div>
 			</li>
 			<li class="bg-dark">
 				<div><a>
-				<img>
-				<span class="menuWithNum">이벤트</span>
-				<span class="numWithMenu">3</span>
+					<img src="./src/event_icon.png">
+					<span class="menuWithNum">이벤트</span>
+					<span class="numWithMenu">3</span>
 				</a></div>
 			</li>
 		</ul>
@@ -519,13 +526,13 @@
 		<ul>
 			<li class="bg-dark">
 			<div><a>
-				<img>
+				<img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/yX/r/6n-kQKox7ur.png">
 				<span class="menuWithNum">NEXT사제지간</span>
 				<span class="numWithMenu">20+</span></a></div>
 			</li>
 			<li class="bg-dark">
 			<div><a>
-				<img>
+				<img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/yI/r/9VpxCKPw80e.png">
 				<span class="menuWithNum">NA우리NEXT</span>
 				<span class="numWithMenu">5</span>
 			</a></div>
@@ -537,12 +544,12 @@
 		<ul>
 			<li class="bg-dark">
 			<div><a>
-				<img>
+				<img src="./src/game_icon.png">
 				<span class="menuWithNum">게임</span>
 				<span class="numWithMenu"></span></a></div>
 			</li>
 			<li class="bg-dark"><div><a>
-				<img>
+				<img src="https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xfa1/t39.2081-0/11404846_683045058466567_479554858_n.png">
 				<span class="menuWithNum">Agar.io</span>
 				<span class="numWithMenu"></span></a></div>
 			</li>
