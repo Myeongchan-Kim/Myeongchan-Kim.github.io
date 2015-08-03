@@ -1,0 +1,49 @@
+<!--transition.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="./css/hover.css">
+	<style>
+	a{
+		font-size: 10px;
+		transition: font-size 1s;
+	}
+
+	a:hover{
+		font-size: 20px;
+	}
+
+	div{
+		background: black;
+		width: 100px;
+		height: 100px;
+		transition: border-radius 1s, background 2s;
+	}
+
+	div:hover{
+		border-radius: 50px;
+		background: gray;
+	}
+
+	span{
+		position: relative;
+		top:0px;
+		transition: top .5s;
+	}
+
+	span:hover{
+		top:-3px;
+	}
+
+	</style>
+</head>
+<body>
+<p>
+	<a> Hello , transition</a>
+</p>
+<div></div>
+<p>마우스를 올리면 <span>위로</span> 이동합니다. </p>
+</body>
+</html>
