@@ -1,0 +1,140 @@
+<!--left_slide.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sliding menu</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style>
+	html{
+		margin:0;
+		padding:0;
+	}
+	*{
+		box-sizing:border-box;
+	}
+	body{
+		top:0;
+		padding:0;
+		margin:0;
+		background: #DDD;
+	}
+	main{
+		position: relative;
+		top:0;
+		background: #CCC;
+		padding: 8px;
+		z-index: 20;
+		transition : margin .5s;
+	}
+
+	main div {
+		margin: 0;
+		margin-left: 50px;
+	}
+	
+	h2{
+		margin: 0;
+	}
+
+	nav{
+		position: fixed;
+		background: gray;
+		color: white;
+		width: 50%;
+		height: 100%;
+		z-index: 10;
+	}
+
+	nav ul{
+		list-style: none;
+	}
+
+	ul li{
+		margin-top: 10px;
+		line-height: 20px;
+	}
+
+	input#toggle_chkbox{
+		display: none;
+	}
+
+	input#toggle_chkbox:checked ~ main {
+		margin-left: 150px;
+	}
+	
+	input#toggle_chkbox:checked ~ main label{
+		background: #F67;
+	}	
+
+	label#toggle_button{
+		display: block;
+		width: 30px;
+		height: 30px;
+		padding-top: 6px;
+		text-align: center;
+		background: #7766EE;
+		color: white;
+		border-radius: 5px;
+	}
+
+
+	</style>
+</head>
+<body>
+<input type="checkbox" id="toggle_chkbox">
+<nav id="side_nav">
+<ul>
+	<li>menu1</li>
+	<li>menu2</li>
+	<li>menu3</li>
+	<li>menu4</li>
+</ul>
+</nav>
+<main>
+<label for="toggle_chkbox" id="toggle_button">
+	<i class="fa fa-bars"></i>
+</label>
+<div id="contents">
+<h2>토글 슬라이드 메뉴</h2>
+<p>
+교수님 질문 있습니다!
+<pre>
+input id="btn"
+nav
+main
+    label for="btn"
+</pre>
+이럴때는 
+<pre>
+input:checked ~ nav {}
+</pre> 를 이용해서 슬라이딩을 하고 
+<pre>
+input:checked ~ main label {}
+</pre>을 이용해서 label색깔을 바꿀 수가 있는데, 
+<pre>
+nav
+main
+    input
+    label
+</pre>일때는 input:checked뒤에 부모를 선택할수가 없어서 해결을 못하겠더라구요 ㅠㅠ
+이떄 input:checked 를 nav랑 연결해주는, 다시말해서 삼촌관계를 어떻게 선택해야 되나요?
+심지어 input이 위로 가지 않으면 안되더라구요...;
+
+
+</p>
+<p>
+Aliquam neque lorem, sagittis sed lectus vel, maximus fermentum risus. Praesent ultrices fermentum mi eget placerat. Phasellus aliquet nulla vitae arcu consequat vestibulum. Duis pulvinar arcu sed porttitor feugiat. Fusce nunc libero, aliquet ut odio eget, consequat tempor sapien. Suspendisse tempus dapibus sollicitudin. Donec ut maximus nulla, vitae commodo magna. Morbi posuere consequat odio, eu tempus odio. Vivamus condimentum, diam in congue commodo, est odio gravida tellus, at elementum dolor urna non ante. Quisque neque purus, ornare in congue eu, lobortis vel ex. Praesent quis posuere nunc.
+</p>
+<p>
+Vestibulum sit amet neque at diam porttitor efficitur a vehicula ex. Proin at turpis vitae lorem elementum eleifend ac sit amet arcu. Vivamus varius tortor eleifend lorem condimentum aliquam. Sed eu pulvinar dui. Mauris magna felis, tempor eu dui sit amet, aliquet ultrices augue. Morbi non nunc congue, sagittis tellus eu, interdum risus. Etiam nunc lectus, eleifend quis massa at, facilisis posuere enim. Nam in odio leo. Phasellus tincidunt posuere lobortis. Nullam viverra neque mollis mi porta volutpat. Fusce porttitor, leo sed finibus dictum, est enim tempor augue, sed ultrices urna nisl eget justo. In in mattis velit. Morbi quis elit tincidunt, interdum ex nec, mattis risus.
+</p>
+<p>
+Morbi vulputate libero sed mi interdum, viverra lacinia nunc pretium. Nullam aliquam elit sit amet sem malesuada, et dapibus lacus cursus. Sed fringilla ut massa nec iaculis. Cras sed lectus condimentum, dignissim sem sed, condimentum leo. Curabitur dapibus, nisi vel tincidunt molestie, ante elit molestie quam, id venenatis risus enim semper elit. Suspendisse ornare lacus ut eros ornare, nec tempor justo aliquam. Curabitur commodo mauris at massa aliquam, id suscipit metus dictum. Ut ut ligula condimentum, venenatis neque a, finibus sem. Aenean tristique magna tellus, eget ornare nulla luctus id. Pellentesque et mauris vulputate nulla vulputate blandit vel vel felis. Praesent semper massa non condimentum pulvinar.
+</p>
+<p>
+Donec facilisis finibus nisi, eget finibus diam consequat quis. Fusce gravida molestie tortor sit amet condimentum. Donec commodo at metus sed feugiat. Morbi interdum euismod neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla gravida odio sagittis ultrices pellentesque. Sed leo urna, viverra sit amet luctus ac, tincidunt nec lorem.
+</p></div>
+</main>
+</body>
+</html>
