@@ -6,6 +6,23 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<style>
+	@font-face {
+
+    font-family:'NanumGothic';
+
+    src: url('images/NanumGothic.eot');
+
+    src: url('images/NanumGothic.eot?#iefix') format('embedded-opentype'),
+
+         url('images/NanumGothic.woff') format('woff'),
+
+         url('images/NanumGothic.ttf') format('truetype');
+
+    font-weight: normal;
+
+    font-style: normal;
+
+	}
 	html{
 		margin:0;
 		padding:0;
@@ -13,6 +30,7 @@
 	*{
 		box-sizing:border-box;
 	}
+
 	body{
 		top:0;
 		padding:0;
@@ -24,7 +42,6 @@
 		top:0;
 		background: #CCC;
 		padding: 8px;
-		z-index: 20;
 		transition : margin .5s;
 	}
 
@@ -33,8 +50,14 @@
 		margin-left: 50px;
 	}
 	
-	h2{
-		margin: 0;
+	h2{ 
+		margin: 5px;
+		background: gray;
+		padding: 5px;
+		border-bottom: 4px solid #AB6; 
+		overflow:auto;
+		text-overflow:ellipsis;
+		white-space: nowrap;
 	}
 
 	nav{
@@ -43,16 +66,38 @@
 		color: white;
 		width: 50%;
 		height: 100%;
-		z-index: 10;
+		font-family: 'NanumGothic';
+		font-weight: bold;
 	}
 
 	nav ul{
 		list-style: none;
 	}
 
+	a{ 
+		display:block;
+		padding : 10px;
+		padding-bottom: 20px;
+		margin: 0 auto;
+		height: 20px;
+		text-decoration: none; 
+		border-bottom: 3px solid gray;
+		color: black;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow:ellipsis;
+	}
+	a:hover{
+		background: #333;
+		color: #BBB;
+		border-bottom: 3px solid black;
+	}
+	ul{
+		padding:0;
+	}
 	ul li{
-		margin-top: 10px;
-		line-height: 20px;
+		padding:0;
+		margin: 0;
 	}
 
 	input#toggle_chkbox{
@@ -68,7 +113,9 @@
 	}	
 
 	label#toggle_button{
+		position: fixed;
 		display: block;
+		float:left;
 		width: 30px;
 		height: 30px;
 		padding-top: 6px;
@@ -78,6 +125,27 @@
 		border-radius: 5px;
 	}
 
+	p{
+		padding:10px;
+	}
+	p.answer::before{
+		content: "Answer :";
+		color: #DDDD44;
+	}
+	p.answer{
+		margin: 0 auto;
+		margin-bottom: 2em;
+		background: #444;
+		color:#DDD;
+		width: 90%;
+		line-height: 1.4em;
+		border-radius: 10px;
+	}
+	p.answer a{
+		border:0;
+		color: #DDD;
+		border-radius: 5px;
+	}
 
 	</style>
 </head>
@@ -85,10 +153,11 @@
 <input type="checkbox" id="toggle_chkbox">
 <nav id="side_nav">
 <ul>
-	<li>menu1</li>
-	<li>menu2</li>
-	<li>menu3</li>
-	<li>menu4</li>
+	<li><a href="">Home</a></li>
+	<li><a href="#HW1">HW1</a></li>
+	<li><a href="#HW2">HW2</a></li>
+	<li><a href="#HW3">HW3</a></li>
+	<li><a href="#placeholder">PlaceHolder</a></li>
 </ul>
 </nav>
 <main>
@@ -96,7 +165,8 @@
 	<i class="fa fa-bars"></i>
 </label>
 <div id="contents">
-<h2>토글 슬라이드 메뉴</h2>
+<article id="HW1">
+<h2>과제1 : 토글 슬라이드 메뉴</h2>
 <p>
 교수님 질문 있습니다!
 <pre>
@@ -119,10 +189,41 @@ main
     label
 </pre>일때는 input:checked뒤에 부모를 선택할수가 없어서 해결을 못하겠더라구요 ㅠㅠ
 이떄 input:checked 를 nav랑 연결해주는, 다시말해서 삼촌관계를 어떻게 선택해야 되나요?
-심지어 input이 위로 가지 않으면 안되더라구요...;
-
-
+심지어 input이 위로 가지 않으면 안되더라구요...; 혹시 안보이는 input들을 전부 HTML 맨위에다가 몰아놔야 되는건가요!
 </p>
+</article>
+<article id="HW2">
+<h2>과제2 : 과거 XHTML 규격에서는 &lt;script &gt; 태그를 사용할 때 다음과 같이 CDATA 섹션을 두기도 했다.
+</h2>
+<p>
+과거 XHTML 규격에서는 &lt;script &gt; 태그를 사용할 때
+다음과 같이 CDATA 섹션을 두기도 했다.
+<pre>
+&lt;script type="text/javascript"&gt;
+//&lt;![CDATA[
+...code...
+//]]&gt;
+&lt;/script&gt;
+</pre>
+XHTML에서 이렇게 작성해야 했던 이유를 설명하라.
+</p>
+<p class="answer">
+이는 script 안에 들어있는 특수문자를 일부 웹 브라우저가, HTML태그로 인식하는것을 막기 위해서 제공되었다. 만약 브라우저가 위 부분을 XHTML로 인식하면 CDATA 문법을 이용해서 그 안에 있는 특수문자를 HTML entity로 변환하고 스크립트 전체를 스크립트로써 이해하지만, 만일 HTML 태그로 인식한다면 오류가 발생하게 된다. 또한, CDATA[] 이 문법 자체를 자바스크립트는 해석하지 못하고 오류를 발생히키기 때문에 자바스크립트의 주석문구인 // 를 이용해서 선언부를 자바스크립트가 해석하지 못하도록 처리했다. 
+</p>
+</article>
+<article id="HW3">
+<h2>과제3. &lt;script&gt; 태그의 language 속성은 어느 규격에서 폐지 예정(deprecated) 상태가 되었는지 설명하고, 참조 문서의 URL도 함께 제출하라.</h2>
+<p>
+&lt;script&gt; 태그의 language 속성은 어느 규격에서 폐지 예정(deprecated) 상태가 되었는지 설명하고, 참조 문서의 URL도 함께 제출하라.
+</p>
+<p class="answer">
+<span>HTML4.01</span>
+<a href="http://www.w3.org/TR/html401/interact/scripts.html#h-18.2.1">
+http://www.w3.org/TR/html401/interact/scripts.html#h-18.2.1
+</a>
+</p>
+</article>
+<h2 id="placeholder">placeholder</h2>
 <p>
 Aliquam neque lorem, sagittis sed lectus vel, maximus fermentum risus. Praesent ultrices fermentum mi eget placerat. Phasellus aliquet nulla vitae arcu consequat vestibulum. Duis pulvinar arcu sed porttitor feugiat. Fusce nunc libero, aliquet ut odio eget, consequat tempor sapien. Suspendisse tempus dapibus sollicitudin. Donec ut maximus nulla, vitae commodo magna. Morbi posuere consequat odio, eu tempus odio. Vivamus condimentum, diam in congue commodo, est odio gravida tellus, at elementum dolor urna non ante. Quisque neque purus, ornare in congue eu, lobortis vel ex. Praesent quis posuere nunc.
 </p>
