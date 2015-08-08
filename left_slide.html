@@ -66,7 +66,7 @@
 		color: white;
 		width: 50%;
 		height: 100%;
-		font-family: 'NanumGothic';
+		font-family: 'NanumGothic', Sans Serif;
 		font-weight: bold;
 	}
 
@@ -147,6 +147,10 @@
 		border-radius: 5px;
 	}
 
+	.source{
+		font-family: 'Courier New', 'Lucida Console',Serif;
+		font-style: oblique;
+	}
 	</style>
 </head>
 <body>
@@ -208,7 +212,7 @@ main
 XHTML에서 이렇게 작성해야 했던 이유를 설명하라.
 </p>
 <p class="answer">
-이는 script 안에 들어있는 특수문자를 일부 웹 브라우저가, HTML태그로 인식하는것을 막기 위해서 제공되었다. 만약 브라우저가 위 부분을 XHTML로 인식하면 CDATA 문법을 이용해서 그 안에 있는 특수문자를 HTML entity로 변환하고 스크립트 전체를 스크립트로써 이해하지만, 만일 HTML 태그로 인식한다면 오류가 발생하게 된다. 또한, CDATA[] 이 문법 자체를 자바스크립트는 해석하지 못하고 오류를 발생히키기 때문에 자바스크립트의 주석문구인 // 를 이용해서 선언부를 자바스크립트가 해석하지 못하도록 처리했다. 
+<span class="source">"&lt;![CDATA[ "</span>는 XML 문서에서, script 안에 들어있는 특수문자를 일부 웹 브라우저가, XML태그로 인식하는것을 막기 위해서 제공되었다. 만약 브라우저가 위 부분을 XHTML로 인식하면 CDATA 문법을 이용해서 그 안에 있는 특수문자를 HTML entity로 변환하고 스크립트 전체를 스크립트로써 이해하지만, 만일 XML 태그로 인식한다면 오류가 발생하게 된다. 또한, 만약 이 페이지를 HTML으로 웹브라우저가 인식한다면, <span class="source">CDATA[]</span> 이 문법 자체를 자바스크립트는 해석하지 못하고 오류를 발생히키기 때문에 자바스크립트의 주석문구인 <span class="source">"//"</span> 를 이용해서 선언부를 자바스크립트가 해석하지 못하도록 처리했다. 
 </p>
 </article>
 <article id="HW3">
