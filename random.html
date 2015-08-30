@@ -1,0 +1,61 @@
+<!--random.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+</head>
+<body>
+random
+<script>
+function MaxMinRandom(min, max){
+	if(max < min) {
+		var tmp = min;
+		min = max;
+		max = tmp;
+	}
+	return min + Math.floor((max-min+1)*Math.random()) ;
+}
+
+function MaxMinRandomWithPoint(min, max, pointNum){
+	var scale = Math.pow(10, pointNum);
+	var result = MaxMinRandom(min*scale, max* scale);
+	result = result/scale;
+	return result;
+}
+
+function koreanWeekDay(date){
+	if(date == null || typeof date !== "object") 
+		return null;
+	var week = "일월화수목금토";
+	return week[date.getDay()]+"요일";
+}
+
+function nyTime(timeString){
+	var krTime = new Date(timeString);
+	krTime.setMinutes(krTime.getMinutes() + krTime.getTimezoneOffset());
+	var stdTime = krTime;
+	stdTime.setHours(stdTime.getHours() - 4 )
+	var nytime = stdTime;
+	return nytime;
+}
+
+function out(){
+	console.log("시작="+i);
+	for(var i=0; i<10; i++){
+		console.log(i)
+	}
+	console.log("끝="+i);
+}
+
+function out2(){
+	var obj = {"prop1" : "value1", "prop2":20};
+	for(var name in obj){
+		if(obj.hasOwnProperty(name))
+			console.log(name, "=", obj[name]);
+	}
+}
+</script>
+</body>
+</html>
+

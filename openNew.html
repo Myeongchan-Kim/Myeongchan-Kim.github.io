@@ -1,0 +1,22 @@
+<!--openNew.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<button onclick="newWinCenter();">button</button>
+<script>
+function newWinCenter(){
+	var w = 400;
+	var h = 300;
+	var top = screen.height/2 - 300/2;
+	var left = screen.width/2 - 400/2;
+	var str = "left="+left+",top="+top+",width="+w+",height="+h;
+	var newWindow = window.open("","",str);
+
+}
+
+</script>
+</body>
+</html>
