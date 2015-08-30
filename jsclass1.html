@@ -4,10 +4,42 @@
 <html>
 <head>
 	<title></title>
+	<script>
+		var obj = {
+			newProperty : "value1",
+			"asdfasdf" : "123"
+		}
+
+		var func1 = new Function('arg', 'return arg;');
+		var func2 = function(arg){
+			return arg*2;
+		};
+
+		function func3(arg){
+			return arg*3;
+		}
+
+		function outer(arg){
+			console.log(value);
+			function inner(){
+				return arg + "name";
+			}
+			var value = 'hello';
+
+			return inner;
+		}
+
+		function func(){
+			console.log(arguments);
+			return arguments[0];
+		}
+
+		func("hello",1,2,3);
+		func();
+		he = func("he");
+		console.log(he);
+	</script>
 </head>
 <body>
-<script>
-console.log(navigator);
-</script>
 </body>
 </html>
