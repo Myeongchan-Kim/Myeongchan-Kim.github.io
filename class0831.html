@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+  .blue {
+  	color:blue;
+  }
+
+  .mousepointerToPoint{
+  	cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <button>Swap</button>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada ante est, a pellentesque justo interdum sed. Nunc sed nisl in dui tristique viverra quis ac risus. Maecenas vel magna tortor. Fusce lacus eros, sollicitudin quis bibendum in, condimentum ac lorem. Integer sollicitudin purus id sapien aliquam, non porttitor libero porta. Maecenas volutpat quam ac velit tristique blandit et et ante. Curabitur condimentum posuere scelerisque.</p>
+  <p>Donec convallis orci a nisl dictum, vitae vehicula neque commodo. Donec lobortis faucibus sagittis. Sed consequat urna ut mattis tempus. Ut et magna ac ligula viverra mollis. In hac habitasse platea dictumst. Quisque egestas nibh vel lectus vulputate, sed consequat justo fringilla. Curabitur vel elementum urna. Pellentesque pulvinar eu dolor et consectetur. Donec venenatis cursus felis, in finibus libero.</p> 
+  <ul id="list"></ul>
+  <button id="addLi">추가</button>
+  <script>
+
+function getPos(el){
+  	var top = 0, left = 0;
+  	while(el.offsetParent){
+  		top += el.offsetTop;
+  		left += el.offsetLeft;
+
+  		el=el.offsetParent
+  	}
+  	return {'top':top , 'left':left};
+}
+
+function swap(){
+
+}
+
+function addStrongLi(){
+	var list  	= document.getElementById('list');
+	
+	var newLi	= document.createElement('li');
+	newLi.innerHTML = '추가된시각 : <strong>'+(new Date())+'</strong>';
+	var strong 	= newLi.querySelector('strong');
+	
+	list.appendChild(newLi);
+
+	return;
+}
+
+var swapbutton = document.querySelector('button');
+swapbutton.addEventListener('click', null);
+
+var ul	= document.querySelector('ul');
+ul.classList.add('mousepointerToPoint');
+ul.addEventListener('click', function(event){
+	console.log(event.target);
+	var eventLi = event.target.closest('li')
+	var strong 	= eventLi.querySelector('strong');
+	strong.classList.toggle('blue');
+});
+	
+var addbutton = document.querySelector('#addLi');
+addbutton.addEventListener('click', addStrongLi);
+
+  </script>
+</body>
+</html>

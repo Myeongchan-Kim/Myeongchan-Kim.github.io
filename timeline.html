@@ -271,16 +271,6 @@
 		width:506px;
 	}
 
-	@media screen and (max-width: 1000px){
-		main #ad_col.column{
-			display: none;
-		}
-	}
-
-	main #ad_col{
-		padding-top: 12px;
-		width:287px;
-	}
 
 	main::after{
 		content: "";
@@ -296,10 +286,80 @@
 		border-radius: 3px;
 		margin-bottom: 10px;
 		min-height: 140px;
+
+		color: #999;
+		font-family: helvetica, arial, sans-serif;
+		font-size: 12px;
 	}
-	main #content #first_art{
-		height:149px;
+
+	main .arts{
 		margin-bottom: 10px;
+	}
+
+	main .arts .art_content{
+		min-height: 150px;
+		padding :10px 10px 0 10px;
+	}
+
+	main .arts .art_footer{
+
+		padding :10px 10px 0 10px;
+	}
+
+	main .arts .art_stats{
+		padding-top: 8px;
+		padding-bottom: 8px;
+		line-height: 16px;
+		font-weight: bold;
+		border-bottom: 1px solid rgb(229, 229, 229);
+		color: rgb(145, 151, 163);
+	}
+
+	
+	main .arts .art_stats a > span{
+		margin-right: 8px;
+	}
+
+	main .arts .art_buttons{
+		padding-top: 8px;
+		padding-bottom: 8px;
+		line-height: 16px;
+	}
+	main .arts .art_buttons span{
+		
+	}
+	
+	main .art_buttons i{
+		text-shadow: 0 -1px rgba(0, 0, 0, .5);
+		color: rgb(180, 180, 180);
+		cursor: pointer;
+	}
+
+	main .arts .art_buttons .blue{
+		text-shadow: 0 -1px rgba(0, 0, 0, .5);
+		color: #5890ff;
+	}
+
+	main .arts .art_buttons > span{
+		margin-right: 20px;
+		padding : 2px;
+		cursor: pointer;
+	}
+
+	main .arts .art_buttons span.button_text{
+		font-weight: bold;
+		color: rgb(117, 117, 117);
+	}
+
+	@media screen and (max-width: 1000px){
+		main #ad_col.column{
+			display: none;
+		}
+	}
+
+	main #ad_col{
+		padding-top: 12px;
+		width:287px;
 	}
 
 	main #ad_col article{
@@ -310,10 +370,11 @@
 		border-bottom: 1px solid #D0D1D5;
 		border-radius: 3px;
 		padding:12px;
+		margin-bottom: 10px;
 	}
 
-	main #ad_col #my_page_art{
-		min-height: 500px;
+	main #ad_col .ads{
+		min-height: 300px;
 	}
 
 	#left_side .left_submenu{
@@ -439,11 +500,12 @@
 	#left_side .see_more:hover{
 		text-decoration: underline;
 	}
+
 	</style>
 </head>
 <body>
-<form action="" method="GET" >
 <header id="global-header">
+<form action="" method="GET" >
 <div id="wrap_title">
 	<div id="fa_icon_box" class="title_box">
 		<a href=""><i id="facebook-icon"class="fa fa-facebook-official"></i></a>
@@ -472,7 +534,7 @@
 				<a href="" class="icon-dark"><span><i id="friends_icon" class="fa fa-users"></i></span></a>
 			</li>
 			<li id="message_button" class="titlebar_icon">
-				<a href="" class="icon-dark"><span><i class="fa fa-comments"></i>
+				<a href="" class="icon-dark"><span><i class="fa fa-comments"></i></span>
 				</a>
 			</li>
 			<li id="notice_button" class="titlebar_icon">
@@ -489,8 +551,8 @@
 		</div>
 	
 </div>
-</header>
 </form>
+</header>
 <main id="global_main">
 	<section id="left_side" class="column">
 		<div id="divOfMine" class="left_submenu">
@@ -561,21 +623,146 @@
 			</li>
 		</ul>
 		</div>
+		<!--for test -->
+		<button onclick="add_article();">추가</button>
 	</section><!--left_side-->
 	<secion id="content" class="column">
-		<article id="first_art">
-		<p id="first_p">
-		</p>
+		<article id="input_art_div" class="arts">
+		<div class="input_art">
+			무슨 생각을 하고 계신가요?
+		</div>
 		</article>
-		<article id="second_art" class="arts">
-		<p id="second_p">
-		</p>
+		<article class="arts article">
+			<div class="art_content">
+			내용
+			</div>
+			<div class="art_footer">
+				<div class="art_stats">
+				<a>
+					<span>좋아요 <span class="like_num">10</span>개</span>
+					<span>댓글 <span class="comment_num">5</span>개</span>
+					<span>공유 <span class="shared_num">0</span>개</span>	
+				</a>
+				</div>
+				<div class="art_buttons">
+				<span class="like_button">
+					<a class="button_a">
+					<i class="like_icon fa fa-thumbs-up"></i>
+					<span class="button_text">좋아요</span>
+					</a>
+				</span>
+				<span class="comment_button">
+					<a class="button_a">
+					<i class="comment_icon fa fa-comment"></i>
+					<span class="button_text">댓글달기</span>
+					</a>
+				</span>
+				<span class="shared_button">
+					<a class="button_a">
+					<i class="share_icon fa fa-share"></i>
+					<span class="button_text">공유하기</span>
+					</a>
+				</span>
+				</div>
+			</div>
 		</article>
 	</secion><!--#content-->
 	<section id="ad_col" class="column">
 		<article id="my_page_art" class="ad_arts">
+		<p class="ads">
+		</p>
+		</article>
+		<article class="ad_arts">
+		<p class="ads">
+		</p>
 		</article>
 	</section>
+
 </main>
+<footer>
+<div></div>
+</footer>
+<script>
+
+function clone(obj) {
+    if (null == obj) return null;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+    }
+    return copy;
+}
+
+function add_article(){
+	var art = document.querySelector("main #content > article:last-child");
+	var new_art = document.createElement("article");
+
+	new_art.className = art.className;
+	new_art.innerHTML = art.innerHTML;
+
+	main_content.appendChild(new_art);
+}
+
+function scroll_down(){
+	var top = document.querySelector("body").scrollTop;
+	//var docH = document.offsetHeight;
+	var docH = document.querySelector("#global_main").offsetHeight;
+	var screenH = window.screen.height;
+	var remain = docH - scrollY - screenH;
+	
+	console.log("docH:"+docH+" scrH:"+screenH+" top:"+top+" remain:"+remain);
+	if(remain < 300){
+		add_article();
+	}
+	return remain;
+}
+
+var main_content = document.getElementById("content");
+
+main_content.addEventListener('click', function(event){
+	var std = { like_num:10, comment_num:5, shared_num:0 };
+
+	console.log(event.target);
+	var eventA = event.target.closest('a')
+	eventA.classList.toggle('blue');
+	var icon = eventA.querySelector('i');
+	icon.classList.toggle('blue');
+
+	var eventDiv = event.target.closest('.art_footer');
+	var targetClass = event.target.closest('.art_buttons > span').classList;
+	
+	var num_std;
+	var query = '.';
+	var str = '';
+
+	if(targetClass.contains("like_button")){
+		str += 'like_num';
+	}else if(targetClass.contains("comment_button")){
+		str += 'comment_num';
+	}else if(targetClass.contains("shared_button")){
+		str += 'shared_num';
+	}else{
+
+	}
+	query += str;
+	var num = eventDiv.querySelector(query).innerText;
+	num_std = std[str];	
+	
+	if(num <= num_std){
+		num++;
+		eventDiv.querySelector(query).innerText = num;
+	}
+	else {
+		num--;
+		eventDiv.querySelector(query).innerText = num;
+	}
+});
+
+while(scroll_down() < 300);
+document.addEventListener('scroll', scroll_down);
+
+
+
+</script>
 </body>
 </html>
