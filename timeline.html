@@ -336,7 +336,9 @@
 	}
 
 	main .arts .art_buttons .blue{
-		text-shadow: 0 -1px rgba(0, 0, 0, .5);
+		color: #5890ff;
+	}
+	main .arts .art_buttons a.blue span{
 		color: #5890ff;
 	}
 
@@ -346,7 +348,7 @@
 		cursor: pointer;
 	}
 
-	main .arts .art_buttons span.button_text{
+	main span.button_text{
 		font-weight: bold;
 		color: rgb(117, 117, 117);
 	}
@@ -624,7 +626,9 @@
 		</ul>
 		</div>
 		<!--for test -->
+		<!--
 		<button onclick="add_article();">추가</button>
+		-->
 	</section><!--left_side-->
 	<secion id="content" class="column">
 		<article id="input_art_div" class="arts">
@@ -726,11 +730,12 @@ main_content.addEventListener('click', function(event){
 	var eventA = event.target.closest('a')
 	eventA.classList.toggle('blue');
 	var icon = eventA.querySelector('i');
+	console.log(eventA);
 	icon.classList.toggle('blue');
 
 	var eventDiv = event.target.closest('.art_footer');
 	var targetClass = event.target.closest('.art_buttons > span').classList;
-	
+
 	var num_std;
 	var query = '.';
 	var str = '';
