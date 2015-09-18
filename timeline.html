@@ -305,6 +305,20 @@
 		padding :10px 10px 0 10px;
 	}
 
+	main .arts .art_content p.art_text{
+		color: black;
+		font-family: helvetica, arial, sans-serif;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	main .arts .art_content p.art_author_name{
+		color: rgb(59, 89, 152);
+		font-family: helvetica, arial, sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 20px;
+	}
+
 	main .arts .art_footer{
 
 		padding :10px 10px 0 10px;
@@ -631,7 +645,7 @@
 		</div>
 		<!--for test -->
 		
-		<button onclick="load_json(1);">추가</button>
+		<button onclick="add_article();">추가</button>
 	</section><!--left_side-->
 	<secion id="content" class="column">
 		<article id="input_art_div" class="arts">
@@ -641,13 +655,21 @@
 		</article>
 		<article class="arts article">
 			<div class="art_content">
-			내용
+			<p class="art_author_name">
+			Paul Kim
+			</p>
+			<p class="art_text">
+			Commodo veniam fugiat amet do magna aliquip labore sunt anim enim. Sit excepteur incididunt duis occaecat eiusmod Lorem pariatur qui irure ipsum occaecat exercitation elit enim. Laboris laborum ex ex commodo non non laborum aliqua eiusmod do dolore commodo amet veniam. Eiusmod aliquip esse quis eiusmod ipsum culpa laborum. Ut qui non Lorem ea ea ut eiusmod aliqua consectetur sunt.
+			</p>
+			<div class="art_img_div">
+			<img class="art_img" src="./src/1.png" />
+			</div>
 			</div>
 			<div class="art_footer">
 				<div class="art_stats">
 				<a>
-					<span>좋아요 <span class="like_num">10</span>개</span>
-					<span>댓글 <span class="comment_num">5</span>개</span>
+					<span>좋아요 <span class="like_num">0</span>개</span>
+					<span>댓글 <span class="comment_num">0</span>개</span>
 					<span>공유 <span class="shared_num">0</span>개</span>	
 				</a>
 				</div>
@@ -690,16 +712,46 @@
 </footer>
 <script>
 
+var article_id = 0;
+var article_loading = 0;
+
 function load_json(num){
 	var xhr = new XMLHttpRequest();;
-	xhr.open('GET', './JSON/page'+num+'.JSON', true);
+	xhr.open('GET', 'https://paul-kim.github.io/JSON/page'+num+'.JSON', true);
 	xhr.onreadystatechange = function() {
-		if (this.readyState === 4)
-		console.log(this.responseText);
+		if (this.readyState === 4){
+			var art_info = JSON.parse(this.responseText);
+			console.log(art_info);
+			var new_art = make_article(); // clone of last article
+			
+			var art_author_name = new_art.querySelector(".art_author_name");
+			art_author_name.innerHTML = art_info[0].name.first + art_info[0].name.last;
+			//console.log(art_author_name);
+
+			var art_text = new_art.querySelector(".art_text");
+			art_text.innerHTML = art_info[0].text;
+			//console.log(art_text);
+			
+			var art_text = new_art.querySelector(".art_text");
+			art_text.innerHTML = art_info[0].text;
+			//console.log(art_author_name);
+
+			main_content.appendChild(new_art);
+			article_loading--;
+		}
 	};
 	xhr.send();
 }
 
+function make_article(){
+	var art = document.querySelector("main #content > article:last-child");
+	var new_art = document.createElement("article");
+
+	new_art.className = art.className;
+	new_art.innerHTML = art.innerHTML;
+
+	return new_art;
+}
 
 function clone(obj) {
     if (null == obj) return null;
@@ -710,14 +762,10 @@ function clone(obj) {
     return copy;
 }
 
-function add_article(){
-	var art = document.querySelector("main #content > article:last-child");
-	var new_art = document.createElement("article");
-
-	new_art.className = art.className;
-	new_art.innerHTML = art.innerHTML;
-
-	main_content.appendChild(new_art);
+function add_article(article_id){
+	var id = (article_id % 5 )+1;
+	console.log("article_id="+article_id+"  article_loading="+article_loading);
+	load_json(id);
 }
 
 function scroll_down(){
@@ -727,9 +775,11 @@ function scroll_down(){
 	var screenH = window.screen.height;
 	var remain = docH - scrollY - screenH;
 	
-	console.log("docH:"+docH+" scrH:"+screenH+" top:"+top+" remain:"+remain+" Add article!");
-	if(remain < 300){
-		add_article();
+	//console.log("docH:"+docH+" scrH:"+screenH+" top:"+top+" remain:"+remain+" Add article!");
+	if(remain < 100 && article_loading < 2){
+		article_id++;
+		article_loading++;
+		add_article(article_id);
 	}
 	return remain;
 }
@@ -776,9 +826,9 @@ main_content.addEventListener('click', function(event){
 	}
 });
 
-while(scroll_down() < 300);
-document.addEventListener('scroll', scroll_down);
+while(scroll_down() < 100 && article_loading < 2);
 
+document.addEventListener('scroll', scroll_down);
 
 
 </script>

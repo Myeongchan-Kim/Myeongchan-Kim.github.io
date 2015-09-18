@@ -1,15 +1,13 @@
-[
-  {
-    "_id": "55fc32b67e9487d88aeb9021",
-    "picture": "http://placehold.it/32x32",
-    "text": "Fugiat do sunt ut laborum nostrud cupidatat. Velit est anim esse consequat irure aliqua amet. Sunt quis pariatur ad cupidatat nisi tempor consequat cupidatat tempor sit laboris consectetur cillum. Sit sint cillum ad excepteur elit dolor sint. Adipisicing duis adipisicing nostrud fugiat. Esse quis ad consectetur eiusmod magna esse adipisicing aute Lorem ea aliquip do.",
-    "like": 26,
-    "isLike": false,
-    "comment": 20,
-    "shared": 4,
-    "name": {
-      "first": "Castro",
-      "last": "Cobb"
-    }
+{
+  "_id": "55fc32b67e9487d88aeb9021",
+  "picture": "../src/2.png",
+  "text": "Fugiat do sunt ut laborum nostrud cupidatat. Velit est anim esse consequat irure aliqua amet. Sunt quis pariatur ad cupidatat nisi tempor consequat cupidatat tempor sit laboris consectetur cillum. Sit sint cillum ad excepteur elit dolor sint. Adipisicing duis adipisicing nostrud fugiat. Esse quis ad consectetur eiusmod magna esse adipisicing aute Lorem ea aliquip do.",
+  "like": 26,
+  "isLike": false,
+  "comment": 20,
+  "shared": 4,
+  "name": {
+    "first": "Castro",
+    "last": "Cobb"
   }
-]
+}
