@@ -630,9 +630,8 @@
 		</ul>
 		</div>
 		<!--for test -->
-		<!--
-		<button onclick="add_article();">추가</button>
-		-->
+		
+		<button onclick="load_json(1);">추가</button>
 	</section><!--left_side-->
 	<secion id="content" class="column">
 		<article id="input_art_div" class="arts">
@@ -685,12 +684,22 @@
 		</p>
 		</article>
 	</section>
-
 </main>
 <footer>
 <div></div>
 </footer>
 <script>
+
+function load_json(num){
+	var xhr = new XMLHttpRequest();;
+	xhr.open('GET', './JSON/page'+num+'.JSON', true);
+	xhr.onreadystatechange = function() {
+		if (this.readyState === 4)
+		console.log(this.responseText);
+	};
+	xhr.send();
+}
+
 
 function clone(obj) {
     if (null == obj) return null;
@@ -769,6 +778,8 @@ main_content.addEventListener('click', function(event){
 
 while(scroll_down() < 300);
 document.addEventListener('scroll', scroll_down);
+
+
 
 </script>
 </body>
