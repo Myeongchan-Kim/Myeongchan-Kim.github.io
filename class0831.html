@@ -63,6 +63,50 @@ ul.addEventListener('click', function(event){
 var addbutton = document.querySelector('#addLi');
 addbutton.addEventListener('click', addStrongLi);
 
+document.addEventListener('keyup', function (event){
+  if( (event.keyCode === 83) && (event.altKey)) {
+    document.querySelector('#search_input').focus();
+  }
+});
+
+function sayName(){
+  console.log(this.name);
+}
+
+function isPlainObject(obj){
+  return ({}).toString.call(obj) === "[object Object]";
+}
+
+var collection = document.getElementsByTagName("ul");
+var arrOfElem = [].concat.apply([], collection);
+
+console.log(arrOfElem);
+
+var peter = {
+  name : 'Peter Parker',  sayName : sayName.bind(peter)
+};
+var bruce = {
+  name : 'Bruce Wayne', sayName : peter.sayName
+};
+
+console.log(peter);
+console.log(bruce);
+peter.sayName();
+bruce.sayName();
+
+var peter2 = {
+  name : 'Peter2 Parker',
+  sayName : function (){
+    setTimeout((function(){
+      console.log(this.name);
+    }).bind(this), 2000);
+  }
+};
+
+peter2.sayName();
+
+
+
   </script>
 </body>
 </html>
