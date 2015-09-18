@@ -668,8 +668,8 @@
 			<div class="art_footer">
 				<div class="art_stats">
 				<a>
-					<span>좋아요 <span class="like_num">0</span>개</span>
-					<span>댓글 <span class="comment_num">0</span>개</span>
+					<span>좋아요 <span class="like_num">12</span>개</span>
+					<span>댓글 <span class="comment_num">3</span>개</span>
 					<span>공유 <span class="shared_num">0</span>개</span>	
 				</a>
 				</div>
@@ -725,16 +725,31 @@ function load_json(num){
 			var new_art = make_article(); // clone of last article
 			
 			var art_author_name = new_art.querySelector(".art_author_name");
-			art_author_name.innerHTML = art_info[0].name.first + art_info[0].name.last;
+			art_author_name.innerHTML = art_info.name.first + art_info.name.last;
 			//console.log(art_author_name);
 
 			var art_text = new_art.querySelector(".art_text");
-			art_text.innerHTML = art_info[0].text;
+			art_text.innerHTML = art_info.text;
 			//console.log(art_text);
 			
-			var art_text = new_art.querySelector(".art_text");
-			art_text.innerHTML = art_info[0].text;
-			//console.log(art_author_name);
+			var art_img = new_art.querySelector(".art_img");
+			art_img.src = art_info.picture;
+			//console.log(art_img);
+
+			var art_like_num = new_art.querySelector(".like_num");
+			art_like_num.innerHTML = art_info.like;
+			var art_comment_num = new_art.querySelector(".comment_num");
+			art_comment_num.innerHTML = art_info.comment;
+			var art_shared_num = new_art.querySelector(".shared_num");
+			art_shared_num.innerHTML = art_info.shared;
+
+			if(art_info.isLike){
+				var eventA = new_art.querySelector('.button_a')
+				eventA.classList.toggle('blue');
+				var eventIcon = new_art.querySelector('i');
+				//console.log(eventA);
+				eventIcon.classList.toggle('blue');
+			}
 
 			main_content.appendChild(new_art);
 			article_loading--;
@@ -787,7 +802,7 @@ function scroll_down(){
 var main_content = document.getElementById("content");
 
 main_content.addEventListener('click', function(event){
-	var std = { like_num:10, comment_num:5, shared_num:0 };
+	//var std = { like_num:10, comment_num:5, shared_num:0 };
 
 	//console.log(event.target);
 	var eventA = event.target.closest('a')
@@ -799,7 +814,6 @@ main_content.addEventListener('click', function(event){
 	var eventDiv = event.target.closest('.art_footer');
 	var targetClass = event.target.closest('.art_buttons > span').classList;
 
-	var num_std;
 	var query = '.';
 	var str = '';
 
@@ -814,9 +828,8 @@ main_content.addEventListener('click', function(event){
 	}
 	query += str;
 	var num = eventDiv.querySelector(query).innerText;
-	num_std = std[str];	
 	
-	if(num <= num_std){
+	if(icon.classList.contains("blue")){
 		num++;
 		eventDiv.querySelector(query).innerText = num;
 	}
