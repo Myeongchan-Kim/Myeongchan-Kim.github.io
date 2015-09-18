@@ -721,7 +721,7 @@ function load_json(num){
 	xhr.onreadystatechange = function() {
 		if (this.readyState === 4){
 			var art_info = JSON.parse(this.responseText);
-			console.log(art_info);
+			//console.log(art_info);
 			var new_art = make_article(); // clone of last article
 			
 			var art_author_name = new_art.querySelector(".art_author_name");
