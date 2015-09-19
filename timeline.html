@@ -300,6 +300,13 @@
 		margin-bottom: 10px;
 	}
 
+	main #content article.focus {
+		border: 2px solid rgb(88,144,255);
+		box-shadow: 1px 1px 1px rgb(88,144,255) ;
+		-webkit-transition: box-shadow 1s, border 1s; /* Safari */
+    	transition: box-shadow 1s, border 1s;
+	}
+
 	main .arts .art_content{
 		min-height: 150px;
 		padding :10px 10px 0 10px;
@@ -653,7 +660,7 @@
 			무슨 생각을 하고 계신가요?
 		</div>
 		</article>
-		<article class="arts article">
+		<article class="arts article" >
 			<div class="art_content">
 			<p class="art_author_name">
 			Paul Kim
@@ -764,6 +771,7 @@ function make_article(){
 
 	new_art.className = art.className;
 	new_art.innerHTML = art.innerHTML;
+	new_art.tabindex = 0;
 
 	return new_art;
 }
@@ -798,6 +806,68 @@ function scroll_down(){
 	}
 	return remain;
 }
+
+function keydown(event){
+	if(event.keyCode === 74 || event.keyCode=== 75){
+		if(document.activeElement.tagName === "INPUT")
+			return;
+		//console.log(event.keyCode);
+		//console.log(document.activeElement.tagName);
+
+
+		var cur_article = document.querySelector(".focus");
+		if(cur_article){
+			if( event.keyCode === 74){
+				cur_article.classList.remove("focus");
+				cur_article = findNextArticle(cur_article);
+				window.scrollTo(0, cur_article.offsetTop);
+				cur_article.classList.add("focus");
+
+			} else if( event.keyCode === 75){
+				cur_article.classList.remove("focus");
+				cur_article = findePreviousArticle(cur_article);
+				window.scrollTo(0, cur_article.offsetTop);
+				cur_article.classList.add("focus");
+			}
+		}else{
+			cur_article = findCurrentArticle();
+			cur_article.classList.add("focus");
+		}
+		console.log(cur_article);
+	}
+};
+
+function findePreviousArticle(article){
+	do {
+		article = article.previousSibling; 
+	}while(article.tagName !== "ARTICLE");
+	return article;
+}
+
+function findNextArticle(article){
+	do {
+		article = article.nextSibling; 
+	}while(article.tagName !== "ARTICLE");
+	return article;
+}
+
+function findCurrentArticle(){
+	console.log(window.pageYOffset);
+	var articles = document.querySelector("#content").childNodes;
+
+	for (var i = 0; i < articles.length; i++) {
+		if(articles[i].tagName === "ARTICLE"){
+			var top = articles[i].offsetTop;
+			var bottom = top + articles[i].offsetHeight;
+			if(window.pageYOffset+200 > top-10 && window.pageYOffset+200 < bottom){
+				//may this position is article that a user is watching.
+				//console.log(articles[i]);
+				return articles[i];
+			}
+		}
+	}
+}
+
 
 var main_content = document.getElementById("content");
 
@@ -839,9 +909,11 @@ main_content.addEventListener('click', function(event){
 	}
 });
 
+
 while(scroll_down() < 100 && article_loading < 2);
 
 document.addEventListener('scroll', scroll_down);
+document.addEventListener('keydown', keydown);
 
 
 </script>
