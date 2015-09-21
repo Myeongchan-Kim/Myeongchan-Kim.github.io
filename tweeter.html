@@ -528,7 +528,7 @@ function buttonCheck(event){
 }
 
 function load_json(id){
-	xhr.open('GET', 'http://api.taegon.kim/posts/page/'+(id/10), true);
+	xhr.open('GET', 'http://api.taegon.kim/posts/page/'+Math.floor(id/10), true);
 	xhr.onreadystatechange = json_recieve;
 	xhr.send();
 };
