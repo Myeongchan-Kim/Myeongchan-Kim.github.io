@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<title>twitter</title>
+<style>
+*{
+	box-sizing : border-box;
+}
+
+.logo_box{
+	position:absolute;
+	top : 12px;
+	left: 438px;
+	width:24px;
+	height:21px;
+	font-size:21px;
+}
+
+.logo_box a{
+	color:#55acee;
+}
+
+img{
+
+	border-radius: 5px;
+}
+
+div{
+
+}
+
+body{
+	margin:0;
+	border: 0;
+	background: #f5f8fa;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+header{
+	position :fixed;
+	height:47px;
+	width:100%;
+	border-bottom: 1px solid #cacaca;
+	background: #FFFFFF;
+	z-index: 10;
+}
+
+header nav{
+	position:relative;
+	top:0;
+	left:0;
+	width:900px;
+	margin:0 auto;
+}
+
+header ul{
+	margin:0;
+	padding-left: 5px;
+}
+
+header ul li{
+	display: block;
+	float:left;
+	top:0px;
+	height: 46px;
+	padding-left: 4px;
+	padding-right: 14px;
+	color: #777777;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	font-size:13px;
+	text-align: center;
+	line-height: 46px;
+	transition:border-bottom .5s, color .5s;
+	cursor: pointer;
+
+}
+
+header ul li span.icon{
+	font-size: 20px;
+	padding-right: 1px;
+	padding-left: 5px;
+}
+
+header ul li:hover{
+	color: #0084B4;
+	border-bottom: 4px solid #0084B4;
+}
+
+header ul li#home_box{
+	border-bottom: 4px solid #0084B4;
+}
+
+main {
+	padding-top: 55px;
+	width:900px;
+	margin : 0 auto;
+}
+
+main section{
+	height:500px;
+}
+
+.main_container{
+	width:900px;
+	margin: 0 auto;
+}
+
+.column{
+	margin-right: 5px;
+	float: left;
+}
+
+.column > div{
+	border:1px solid #e1e8ed;
+	border-radius: 5px;
+}
+
+.left_column{
+	width:290px;
+}
+
+.left_column div{
+	z-index: 5;
+}
+
+.profile_box{
+	position: relative;
+	height: 202px;
+	border-radius: 5px;
+}
+
+.profile_box .profile_upperbox{
+	width:100%;
+	height:90px;
+	background: #0084B4;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.profile_box .profile_lowerbox{
+	width:100%;
+	height:110px;
+	background: #FFF;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.profile_box .img_box{
+	position: relative;
+	top:-30px;
+	left:10px;
+	float: left;
+	height: 78px;
+	width:78px;
+	border: 3px solid white;
+	border-radius: 5px;
+	background:#FFF;
+	z-index: 6;
+}
+
+.profile_box .img_box img{
+	width:72px;
+	height: 72px;
+}
+
+.name_box {
+	float: left;
+	margin-top: 10px;
+	padding-left: 15px;
+	
+}
+
+.name_box p{
+	margin: 0;
+}
+
+p.big_name{
+	font-size:18px;
+	font-weight: 500;
+	line-height: 21px;	
+	color:#292f33;
+
+}
+
+p.tag_name{
+	font-size: 12px;
+	line-height: 16px;
+	color: #66757f;
+}
+
+.stat_box_container{
+	position: relative;
+	top:-20px;
+	left:10px;
+	clear:both;
+}
+
+.stat_box{
+	float:left;
+	width:90px;
+	text-align: left;
+	padding-left: 4px;
+}
+
+.stat_box dt{
+	color : #8c9ca9;
+	font-size:10px;
+	letter-spacing: .02em;
+}
+
+.stat_box dd{
+	color : #0084B4;
+	font-size:18px;
+	padding-top: 3px;
+	margin:0;
+}
+
+.main_column{
+	width:590px;
+}
+
+.input_art{
+	background: #e5f2f7;
+	padding: 11px 12px 10px 30px;
+}
+
+img.input_profile{
+	position: relative;
+	top:2px;
+	vertical-align: top;
+	height: 32px;
+	width:32px;
+}
+
+textarea.input_twit{
+	border:1px solid #e1e8ed;
+	border-radius: 5px;
+	margin-left: 10px;
+	width:490px;
+	font-size: 16px;
+	height: 35px;
+	resize:none;
+}
+
+textarea.focus{
+	height:100px;
+}
+
+div.bottom_comment{
+	text-align: right;
+}
+
+.bottom_comment button{
+	width: 95px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right:10px;
+	background-color: rgba(0, 132, 180, 0.8);
+    padding: 9px 16px 8px 17px;
+    color: #FFF;
+    font-size: 14px;
+}
+
+.bottom_comment button:focus{
+	background-color: rgba(0, 112, 250, 1);
+}
+
+.bottom_comment button.blur{
+	background-color: rgba(0, 132, 180, 0.3); 
+}
+
+.bottom_comment > span{
+	color: #8899a6;
+}
+
+.bottom_comment button span{
+	margin-left: 10px;
+}
+
+.art:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #FFF;
+}
+
+.art{
+	background: #FFF;
+}
+.art:hover{
+	background: #f5f8fa;
+}
+.art > div {
+	padding: 10px;
+}
+
+.art img{
+	width: 48px;
+	height: 48px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.tweet_content{
+	display: inline-block;
+	width: 500px;
+}
+
+.tweet_content p{
+	margin: 0;
+}
+
+.tweet_content span.big_name{
+	font-size:18px;
+	font-weight: 500;
+	line-height: 21px;	
+	color:#292f33;
+}
+
+.tweet_content span.tag_name{
+	font-size: 16px;
+	line-height: 16px;
+	color: #66757f;
+}
+
+.tweet_stat_box{
+	padding-top: 10px;
+	text-align: left;
+	color: #DDD;
+}
+
+.tweet_stat_box > span{
+	display: inline-block;
+	width: 100px;
+	cursor: pointer;
+}
+.tweet_stat_box > span:hover{
+	color: #FFAC33;
+}
+
+.tweet_stat_box > span.selected{
+	color: #FFAC33;
+}
+
+.tweet_stat_box > span span{
+	padding-left: 10px;
+}
+
+textarea.input_twit ~ div{
+	display: block;
+}
+textarea.input_twit ~ div.hidden{
+	display: none;
+}
+
+article.template{
+	display: none;
+}
+
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="img_box logo_box">
+<a href=""><i class="fa fa-twitter"></i></a>
+</div>
+<ul>
+	<li id="home_box" class="menu">
+		<span class="icon"><i class="fa fa-home"></i></span>
+		<span>Home</span></li>
+	<li class="menu"><span class="icon"><i class="fa fa-bell"></span></i>
+		<span><a>Notification</a></span></li>
+	<li class="menu"><span class="icon"><i class="fa fa-envelope"></i></span>
+		<span><a>Message</a></span></li>
+</ul>
+</nav>
+</header>
+<main>
+<div class="main_container">
+	<section class="column left_column">
+		<div class="profile_box">
+			<div class="profile_upperbox">
+			</div>
+			<div class="profile_lowerbox">
+			<div class="img_box">
+				<img src="./src/profile_pic.jpg" />
+			</div>
+			<div class="name_box">
+			<p class="big_name">Kim MyeongChan</p>
+			<p class="tag_name">@PaulKim</p>
+			</div>
+			<div class="stat_box_container">
+				<div class="stat_box"><dt class="stat">TWEETS</dt><dd class="stat_num">92348</dd></div>
+				<div class="stat_box"><dt class="stat">FOLLOWING</dt><dd class="stat_num">23</dd></div>
+				<div class="stat_box"><dt class="stat">FOLLOWERS</dt><dd class="stat_num">4562</dd></div>
+			</div>
+			</div>
+		</div>
+	</section>
+	<section class="column main_column">
+	<div class="contents_container">
+	<form name="input_twit" action="">
+	<article class="input_art">
+		<img class="input_profile" src="./src/profile_pic.jpg">
+		<textarea id="textarea" class="input_twit" placeholder="What's new?"></textarea>
+		<div class="bottom_comment hidden">
+		<span class="textarea_toggle">300</span>
+		<button id="tweet_button" class="textarea_toggle blur"><i class="fa fa-pencil"></i><span>Tweet</span></button>
+		</div>
+	</article>
+	</form>
+	<article class="art template" id="hidden_art">
+		<div>
+		<img class="mini_profile" src="http://placehold.it/48x48">
+		<div class="tweet_content">
+			<div class="tweet_title"><span class="big_name">Kim Taegon</span><span class="tag_name">@taegon</span></div>
+			<div class="tweet_text_box">
+				<p class="tweet_text">
+				'국어사전 함께 즐기기' 공모전 수상자는 10월 2일(금) 국립국어원 누리집에 발표할 예정입니다.
+#국립국어원, #국어사전진흥공모전, #국어사전함께즐기기</p>
+			</div>
+			<div class="tweet_stat_box">
+				<span class="reply"><i class="fa fa-reply"></i></span>
+				<span class="retweet"><i class="fa fa-retweet"></i><span class="retweet_num">4</span></span>
+				<span class="favorite"><i class="fa fa-star"></i><span class="favorite_num">10</span></span>
+			</div>
+		</div>
+		</div>
+	</article>
+	</div>
+	</section>
+</div>
+</main>
+<script>
+function main_click(event){
+	var curElement = document.activeElement;
+	//textarea part
+	var toggle_div = document.querySelector("textarea.input_twit ~ div");
+	var textarea = document.querySelector(".input_art textarea");
+	var evTagname = null;
+	if(event && event.target)
+		evTagname = event.target.tagName;
+	else
+		return;
+	event.preventDefault();
+
+	var button = event.target.closest("button");
+	if(button && button.classList.contains("blur"))
+		return;
+
+
+	if ((textarea.value || curElement.tagName === "TEXTAREA" || evTagname === "BUTTON")){
+		console.log(event.target);
+		toggle_div.classList.remove("hidden");
+		textarea.classList.add("focus");
+	}
+	else {
+		toggle_div.classList.add("hidden");
+		textarea.classList.remove("focus");
+	}
+
+
+
+	//post part
+	targetForm = event.target.closest('form');
+	//console.log(targetForm);
+	if(button && (button.id == "tweet_button")){
+		if(button.classList.contains("blur"));
+		else{
+			//api.taegon.kim/posts
+			var username = document.querySelector(".profile_box p.big_name").innerHTML;
+			var content = targetForm.querySelector("textarea").value;
+			//console.log(content);
+			var query = "content="+content+"&username="+username;
+			console.log(query);
+			xhr.open('POST', 'http://api.taegon.kim/posts', true);
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xhr.send(query);
+			targetForm.querySelector("textarea").value ="";
+			textarea.classList.remove("focus");
+			toggle_div.classList.add("hidden");
+		}
+		return;
+	}
+
+	//favorite part
+	var article = event.target.closest('article');
+	var favorite = article.querySelector(".favorite");
+	if(favorite){
+		var id = article.id;
+		if(favorite.classList.contains("selected")){
+			favorite.classList.remove("selected");
+			xhr.open('DELETE', 'http://api.taegon.kim/posts/'+id+'/favorite', true);
+			xhr.send();
+			var num = favorite.querySelector(".favorite_num");
+			num.innerHTML = num.innerHTML*1 -1;
+		}else{
+			favorite.classList.add("selected");
+			xhr.open('POST', 'http://api.taegon.kim/posts/'+id+'/favorite', true);
+			xhr.send();
+			var num = favorite.querySelector(".favorite_num");
+			num.innerHTML = num.innerHTML*1 +1;
+			//POST /posts/포스트아이디/favorite;
+		}
+	}
+}
+
+function buttonCheck(event){
+	//toggle button color
+	var textarea = document.querySelector(".input_art textarea");
+	var button = document.querySelector(".bottom_comment button");
+	if(textarea.value && button.classList.contains("blur"))
+		button.classList.remove("blur");
+	else if( !(textarea.value) && !(button.classList.contains("blur")) )
+		button.classList.add("blur");
+
+	//change letter remain number;
+	var num = document.querySelector(".bottom_comment > span").innerHTML;
+	num = 300 - textarea.value.length;
+	//console.log(num);
+	document.querySelector(".bottom_comment > span").innerHTML = num;
+}
+
+function load_json(id){
+	xhr.open('GET', 'http://api.taegon.kim/posts/page/'+(id/10), true);
+	xhr.onreadystatechange = json_recieve;
+	xhr.send();
+};
+
+function json_recieve() {
+	if (this.readyState === 4){
+		//console.log(this.responseText);
+		var arts = JSON.parse(this.responseText);
+		if(arts['posts'] && arts['posts'].length > 1)
+			art_info = arts["posts"][(article_id % 10)];
+		else 
+			return;
+
+		//console.log(arts);
+		var new_art = make_article(); // clone of template
+		//console.log(new_art);
+
+		var useranme = new_art.querySelector(".big_name");
+		useranme.innerHTML = art_info['username'];
+
+		var text = new_art.querySelector(".tweet_text");
+		text.innerHTML = art_info["content"];
+
+		var retweet = new_art.querySelector(".retweet_num");
+		retweet.innerHTML = art_info["retweet"];
+
+		var favorite = new_art.querySelector(".favorite_num");
+		favorite.innerHTML = art_info["favorite"];
+
+		new_art.id = art_info["id"];
+
+		main_content.appendChild(new_art);
+		if(article_loading>0)
+			--article_loading;
+	}
+};
+
+function make_article(){
+	var art = document.querySelector("article.art");
+	var new_art = document.createElement("article");
+	new_art.className = art.className;
+	new_art.innerHTML = art.innerHTML;
+	if(new_art.classList.contains("template"))
+		new_art.classList.remove("template");
+
+	return new_art;
+}
+
+function initial_check(){
+	if(article_id > 10)
+		return;
+	else 
+		scroll_down();
+}
+
+function scroll_down(event){
+	var top = document.querySelector("body").scrollTop;
+	var docH = document.querySelector(".contents_container").offsetHeight;
+	var screenH = window.screen.height;
+	var remain = docH - scrollY - screenH;
+	
+	//console.log("docH:"+docH+" scrH:"+screenH+" top:"+top+" remain:"+remain);
+	if(remain < remain_std && article_loading < 1){
+		console.log("add_article");
+		article_id++;
+		article_loading++;
+		add_article(article_id);
+	}
+	return remain;
+}
+
+function add_article(article_id){
+	console.log("article_id="+article_id+"  article_loading="+article_loading);
+	load_json(article_id);
+}
+
+var xhr = new XMLHttpRequest();			
+var remain_std = -100
+var page = 0;
+var article_id = 0;
+var article_loading = 0; //현재 한개만 로딩
+var main_content = document.querySelector("div.contents_container");
+document.addEventListener("click", main_click);
+document.addEventListener("keyup", buttonCheck);
+document.addEventListener('scroll', scroll_down);
+setInterval(initial_check, 100);
+
+</script>
+</body>
+</html>

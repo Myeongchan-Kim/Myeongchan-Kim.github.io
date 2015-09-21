@@ -800,7 +800,7 @@ function scroll_down(){
 	var remain = docH - scrollY - screenH;
 	
 	//console.log("docH:"+docH+" scrH:"+screenH+" top:"+top+" remain:"+remain+" Add article!");
-	if(remain < 100 && article_loading < 2){
+	if(remain < 100 && article_loading < 1){
 		article_id++;
 		article_loading++;
 		add_article(article_id);
@@ -911,7 +911,7 @@ main_content.addEventListener('click', function(event){
 });
 
 
-while(scroll_down() < 100 && article_loading < 2);
+while(scroll_down() < 100 && article_loading < 1);
 
 document.addEventListener('scroll', scroll_down);
 document.addEventListener('keydown', keydown);
