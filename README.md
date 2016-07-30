@@ -1,9 +1,12 @@
 # paul-kim.github.com
 for webUIBasic class in 2nd trimester , 2015 @ NEXT
 
-## week1 homework :  print hello world. 
- - index.html
- - I made it by using HTML entity. ... for fun....
+## facebook 흉내내기
+http://paul-kim.github.io/timeline.html  
+  
 
-## week2 homework : make form for registration
- - register.html
+## twitter 흉내내기
+http://paul-kim.github.io/tweeter.html  
+  
+  
+  
