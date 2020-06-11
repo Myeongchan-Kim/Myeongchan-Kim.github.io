@@ -881,8 +881,12 @@ var main_content = document.getElementById("content");
 main_content.addEventListener('click', function(event){
 	//var std = { like_num:10, comment_num:5, shared_num:0 };
 
-	//console.log(event.target);
+	// console.log(event.target);
 	var eventA = event.target.closest('a');
+	if (eventA === null){
+		return;
+	}
+	
 	eventA.classList.toggle('blue');
 	var icon = eventA.querySelector('i');
 	//console.log(eventA);
